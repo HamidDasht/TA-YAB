@@ -1,0 +1,349 @@
+body{
+    font-family: Sahel, Tahoma, Helvetica, sans-serif;
+}
+
+
+.rightside img{
+    
+    margin-left: 0;   
+}
+/*
+
+.profile{
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    position:fixed;
+    top: 5em;
+    right: 1.5em;
+    width: 23%;
+}
+*/
+
+.profile{
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    position:relative;
+    width: 100%;
+}
+
+
+.profile .card-title, .card-text{
+    font-weight: 500;
+}
+
+.allpage{
+    
+    direction: rtl;
+    margin-top: 5em;
+}
+
+.course-title{
+    
+    background-color: rgba(0,0,0,.03);
+    text-align: right;
+    
+}
+
+.list-group-item a[href="course.html"]{
+    
+    text-decoration: none;
+    float: right;
+    color: black;
+    text-align: right;
+}
+
+.firstlistitem{
+    
+    color: #007bff;
+    float: right;
+    text-align: right;
+}
+
+.courses{
+    
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+}
+
+.courses .list-group-item a:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: #0099cc;
+}
+.courses .list-group-item{
+    
+    transition: all 0.2s;
+}
+.card-body p, h5{
+    text-align: right;
+}
+
+.list-group{
+    padding-right: 0;
+}
+
+.searchbox{
+    padding: 1em 0 1em 0;
+    background-color: white;
+    margin-top: 1em;
+    box-shadow: 0px 0px 5px 0px #ddd;
+}
+
+input[type="search"]{
+    direction: rtl;
+}
+
+.navbar-nav{
+    direction: rtl;
+    margin-right: -3.5em;
+    
+}
+
+.navbar{
+    background-color: #0099cc;
+}
+
+.navbar .nav-link{
+    margin-right: 1em;
+    text-align: right;
+}
+
+.navbar .nav-link:hover{
+  
+    background: #00b4d8;
+    border-width: 50%;
+    border-radius: 5px;
+    
+}
+.navbar .navbar-brand{
+    margin-left: 1em;
+}
+
+
+.bottomnav{
+    float: left;
+    padding: 0;
+}
+
+.bottomnav .jumbotron{
+    
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 2em 2em 1em 2em;
+    background: #457b9d;
+    border-radius: 0;
+    color: white;
+}
+
+.bottomnav img{
+    
+    width: 7em;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #457b9d;
+}
+
+.bottomnav .jumbotron p{
+    
+    text-align: center;
+    
+}
+
+.bottomnav hr{
+    background: #bbb;
+    margin: 0 10% 0 10%;
+}
+
+
+
+#modal-msg{
+    padding: 0;
+}
+
+
+#modal-msg .right-msg .card-title{
+/*    color: #007bff; */
+    color: #1bb9b7; 
+    margin-top: 1em;
+    font-size: 1em;
+}
+
+.right-msg .card-title img{
+    
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    float: right;
+    margin-left: 0.5em;
+    
+    
+}
+
+#modal-msg .right-msg .msg{
+    
+    padding: 1em 1em 0em 1em;
+    background: rgba(27,185,183, .2);;
+    border-radius: 5px;
+    margin: 0.5em 4em 0.5em 4em;
+    text-align: right;
+    
+}
+
+
+#modal-msg .left-msg .card-title{
+    color: #1bb9b7;
+    direction: ltr;    
+    margin-top: 1em;
+    font-size: 1em;
+}
+
+#modal-msg .left-msg .card-title img{
+    
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    float: left;
+    margin: 0 0.5em 0 0.5em;
+    direction: ltr;
+}
+
+#modal-msg .left-msg .msg{
+    
+    padding: 1em 1em 0em 1em;
+    border-radius: 5px;
+    margin: 0.5em 4em 0.5em 4em;
+    border: 1px solid #1bb9b7;
+    text-align: right;
+}
+.modal-header .right-msg {
+    width: 100%;
+    
+}
+.modal-header .right-msg img{
+    
+}
+.modal-header{
+    
+    box-shadow: 0px 0px 5px 0px #ddd;
+}
+/*
+.modal-footer{
+    
+    box-shadow: 0px 0px 5px 0px #ddd;
+}
+*/
+
+.modal-header .close{
+    
+    
+    padding: 0.2em;
+}
+
+.modal-body img{
+
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    float: right;
+    margin-left: 0.5em;
+}
+.modal-body h4{
+    text-align: right;
+    font-size: 1em;
+    
+}
+#msg-modal-body p{
+    font-size: 0.8em;
+    text-align: right;
+    direction: rtl;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: right;
+    margin-right: 3em;
+    margin-bottom: 0.5em;
+    width: 30em;
+}
+
+#msg-modal-body td{
+    padding-bottom: 0;
+}
+
+
+
+#modal-msg .card-text{
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#modal-msg .timelabel{
+    float: left;
+    margin-top: 1em;
+}
+
+.modal-footer form{
+    margin: 0;
+    direction: ltr;
+    width: 100%;
+}
+.modal-footer textarea{
+    resize: none;
+    direction: rtl;
+    margin = 0;
+}
+
+
+#modal-msg .msg-date{
+    text-align: center;
+    font-size: 0.8em;
+    padding: .5em 0 .5em 0;
+    margin: 0 5em 0 5em;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    direction: rtl;
+}
+.left-msg, .right-msg{
+    
+    padding: 0;
+    direction: rtl;
+    
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f8f9fa; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ced4da; 
+}
+
+
+@font-face{
+    src: url("Sahel.ttf");
+    font-family:"Sahel";
+}
+
+
+@font-face{
+    src: url("Yekan.ttf");
+    font-family:"Yekan";
+}
+
+@font-face{
+    src: url("Sahel-FD.ttf");
+    font-family:"Sahel-FD";
+}
+
+
+

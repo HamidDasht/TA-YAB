@@ -1,0 +1,72 @@
+
+.my_requests{
+    
+    text-align: right;
+}
+
+.my_requests .jumbotron h1{
+    
+    font-size: 2em;
+    color: #0099cc;
+    margin-bottom: 0.5em;
+}
+
+.my_requests .jumbotron{
+    
+    background: white;
+    padding: 0;
+    
+}
+
+.bg-warning{
+    color: black;
+}
+
+form{
+    margin-top: 1em;
+}
+
+.form-group{
+    
+    margin-left: 2em;
+    margin-right: 0;
+}
+
+.card a{
+    margin-top: 1em;
+}
+
+span{
+    color: #0099cc;
+}
+
+.card{
+    
+    box-shadow: 0px 0px 5px 0px #ddd;
+    transition: all 0.5s;
+}
+
+#vote-form{
+    display: block;
+    height: 35em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+.score{
+    float: left;
+    position: relative;
+    right: 2em;
+}
+
+.score-text{
+    float: left;
+    margin-right: 1em;
+    position: relative;
+    bottom: 2em;
+    left: 3em;
+    
+}
+table tr{
+    transition: all .5s;
+}

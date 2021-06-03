@@ -1,0 +1,57 @@
+
+.my_requests{
+    
+    text-align: right;
+}
+
+
+#collapseExample .card .card-title{
+    color: #1bb9b7;
+    
+}
+
+#collapseExample .card .card-title img{
+    
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    float: right;
+    margin-left: 0.5em;
+    
+}
+
+#collapseExample .card .card-text{
+    
+    padding: 2.5em;
+    border-radius: 5px;
+    margin-right: 4em;
+    border: 1px solid #1bb9b7;
+    
+}
+
+.bg-warning{
+    color: black;
+}
+
+
+#collapseExample .card{
+    box-shadow: none;
+    
+}
+
+
+.card-header h4{
+    
+    text-align: center;
+    margin-top: 1em;
+    color: #0099cc;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.card-header h4 i{
+    font-size: 2.5em;
+    margin-left: 0.1em;
+    color: #aaa;
+}
+

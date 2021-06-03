@@ -1,0 +1,42 @@
+.my_requests{
+    
+    text-align: right;
+}
+
+.my_requests .jumbotron h1{
+    
+    font-size: 2em;
+    color: #0099cc;
+    margin-bottom: 0.5em;
+}
+
+.my_requests .jumbotron{
+    
+    background: white;
+    padding: 0;
+    
+}
+
+.my_requests .card-header{
+    
+    font-weight: 600;
+}
+
+.alert .close{
+    padding: 0;
+    color: red;
+}
+.alert label{
+    margin-right: 2em;
+}
+.card{
+    
+    box-shadow: 0px 0px 5px 0px #ddd;
+    transition: all 0.5s;
+}
+
+#Replayscard .card:hover{
+    
+    background: rgba(0,0,0,.03);
+    cursor: pointer;
+}

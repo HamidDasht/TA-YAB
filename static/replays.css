@@ -1,0 +1,130 @@
+
+.my_requests{
+    
+    text-align: right;
+}
+
+#Replayscard{
+    margin-top: -0.3em;
+}
+
+.card-text a{
+    float: left;
+    margin-right: 0.5em;
+}
+
+#Replayscard .card-title, #RequestExplianation .card-title{
+    
+    color: #1bb9b7;
+    font-weight: 500;
+    
+}
+
+.card-title img{
+    
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    float: right;
+    margin-left: 0.5em;
+    
+}
+
+#RequestExplianation .card-title{
+    margin-right: 0;
+}
+
+#RequestExplianation .badge{
+    margin-left: 1em;
+}
+
+
+#Replayscard .card-header{
+    
+    margin: 0 2em 0 2em;
+    background: white;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#Replayscard .card-title{
+    
+    margin: 0;
+}
+
+
+#Replayscard .card-footer{
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-top: -1em;
+}
+
+#Replayscard .card-footer #page-counter{
+    
+    float: left;
+    direction: ltr;
+}
+
+#Replayscard .card-footer #page-counter .pagination{
+    box-shadow: 0px 0px 5px 0px #ddd;
+    margin-bottom: 0;
+}
+
+.modal-title{
+    float: right;
+    text-align: right;
+}
+
+.badge{
+    font-weight: normal;
+}
+
+.card-header span{
+
+    position: absolute;
+    font-size: 0.8em;
+    margin-top: -1em;
+    margin-right: -0.5em;
+    
+}
+
+.icons{
+
+    font-size: 1em;
+    width: 100%;
+    text-align: left;
+    
+}
+
+td .card{
+    padding: 0 2em 0 2em;
+}
+
+
+#pills-tab{
+    font-size: 0.9em;
+}
+
+#pills-profile-tab{
+    background: white;
+    border-bottom-color: #1bb9b7;
+
+}
+#pills-profile-tab span{
+
+    position: absolute;
+    font-size: 1em;
+    margin-top: -1em;
+    left: 0.5em;
+}
+
+
+.my_requests .card-header .nav-link{
+    padding: 0.3em;
+    margin-right: 1em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    color: black;
+    border-bottom: 1px solid white;
+}
+
