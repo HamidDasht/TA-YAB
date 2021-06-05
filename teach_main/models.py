@@ -11,7 +11,7 @@ class Request(models.Model):
     prof_lname = models.CharField(max_length=30)
     prof_id = models.CharField(max_length=6)
     date = models.DateField(auto_now_add=True, blank=True)
-    #datetime = models.DateTimeField(auto_now_add=True, blank=True)
+    datetime = models.DateTimeField(auto_now_add=True, blank=True)
     def __str__(self):
         return self.course_name + '(' + str(self.id) + ')'
         

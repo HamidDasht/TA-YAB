@@ -11,7 +11,7 @@ replying_course_id = -1
 # Create your views here.
 def index(request):
     global replying_course_id
-    requests = Request.objects.all().order_by('-date')
+    requests = Request.objects.all().order_by('-datetime')
     p = Paginator(requests, 3)
     page_num = request.GET.get('page', 1)
     try:
