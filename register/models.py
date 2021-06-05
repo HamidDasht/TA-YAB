@@ -6,6 +6,25 @@ from django.db.models.fields import CharField, EmailField, TextField
 from django import forms
 
 
+TEACHER = "1"
+STUDENT = "2"
+TYPE_CHOICES = (
+    ("1", "TCH"),
+    ("2", "STD"),
+)  
+
+COMPUTER = "1"
+MATHEMATICAION = "2"
+ELECTRIAL = "3"
+PHYSICS = "4"
+DEPT_CHOICES = (
+        ("1", "COMP"),
+        ("2", "MATH"),
+        ("3", "ELCT"),
+        ("4", "PHYS"),
+)
+
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=CASCADE)
     FRESHMAN = 'FR'

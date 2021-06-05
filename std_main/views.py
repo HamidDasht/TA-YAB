@@ -1,15 +1,29 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import redirect, render
+from django.http import HttpResponse, request
 from teach_main.models import Request,Reply,Timing
 from django.views.generic import View
 from django.core.paginator import Paginator, EmptyPage
 from django.http import JsonResponse
+from django.contrib.auth.decorators import user_passes_test
+from register.models import STUDENT, UserProfile
+from django.contrib.auth.decorators import login_required
 import json
 
 replying_course_id = -1
 
-# Create your views here.
+@login_required(login_url='../home')
 def index(request):
+    user = request.user
+    print(user)
+    try:
+        profile = UserProfile.objects.get(user__username=user.get_username())
+    except:
+        return redirect('../home')
+        return HttpResponse("<h1>شما اجازه ی ورود به این صفحه را نداریم</h1>")
+    if profile.type != STUDENT:
+        return redirect('../prof')
+        return HttpResponse("<h1>شما اجازه ی ورود به این صفحه را نداریم</h1>")
+
     global replying_course_id
     requests = Request.objects.all().order_by('-datetime')
     p = Paginator(requests, 3)
@@ -20,7 +34,10 @@ def index(request):
         page = p.page(1)
 
     if request.method == 'GET':
-        return render(request, 'std_main/studentpage.html', {'requests':page})
+        return render(
+            request, 'std_main/studentpage.html', 
+        {'requests':page , 'std_name': user.first_name + ' ' + user.last_name}
+        )
 
     elif request.method == 'POST':
         if replying_course_id != -1:
@@ -39,8 +56,8 @@ def index(request):
                 reply_times_str += str(reply_times[i])
             
             if (reply_text != False):
-                new_reply = Reply(reply_text=reply_text+ ' ' + reply_times_str, replier_fname='سارا',
-                 replier_lname='برادران', replier_id='2', request=related_req)
+                new_reply = Reply(reply_text=reply_text+ ' ' + reply_times_str, replier_fname=user.first_name,
+                 replier_lname=user.last_name, replier_id='2', request=related_req)
                 new_reply.save()
             
             replying_course_id = -1
@@ -48,6 +65,8 @@ def index(request):
     print(reply_text)
     return render(request, 'std_main/studentpage.html', {'requests':page, 'success': True})
 
+
+@login_required(login_url='../home')
 def send_reply(request):
     if request.method == 'GET':
         global replying_course_id

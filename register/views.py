@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate, get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
+from .models import STUDENT, TEACHER, UserProfile, TYPE_CHOICES, DEPT_CHOICES
 
 from .forms import UserLoginForm
 
@@ -21,12 +22,15 @@ def loginPage(request):
         password = form.cleaned_data.get('password')
 
         user = authenticate( username=username, password=password )
-
+        
         login(request, user)
-
-        if next :
-            return redirect(next)
-        return render(request, 'registration/logout.html', {})
+        profile = UserProfile.objects.get(user__username=user.get_username())
+        
+        if profile.type == TEACHER :
+            return redirect('../prof')
+        elif profile.type == STUDENT:
+            return redirect('../std')
+        #return render(request, 'registration/logout.html', {})
 
     context = {
         'form':form,

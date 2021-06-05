@@ -58,7 +58,7 @@
                     <div class="card">
                       <img class="card-img-top" src="{% static 'profpic.png' %}" alt="Card image cap">
                       <div class="card-body">
-                        <h5 class="card-title">مریم موزرانی </h5>
+                        <h5 class="card-title"> {{ std_name }} </h5>
                         <p class="card-text">دانشکده مهندسی برق و کامپیوتر </p>
                         <p class="card-text">گروه نرم افزار و فناوری اطلاعات </p>
                       </div>
@@ -342,7 +342,7 @@
                                 <div class="card border-white" style="max-width: 900px;">
                                   <div class="card-header border-info form-check-inline"> 
                                     <div class="teacher-name">
-                                    <p class="form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> استاد الهام محمودزاده </p> 
+                                    <p class="form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> استاد {{ request.prof_fname }}  {{ request.prof_lname }}  </p> 
                                     </div>                                  
                                     <div class="icons">
                                         <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
