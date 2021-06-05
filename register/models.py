@@ -1,11 +1,58 @@
 from typing import Text
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, AbstractUser
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, AbstractUser, UserManager, User
+from django.db.models.deletion import CASCADE
 from django.db.models.fields import CharField, EmailField, TextField
 from django import forms
 
 
-class MyAccountManager(BaseUserManager):
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=CASCADE)
+    FRESHMAN = 'FR'
+    SOPHOMORE = 'SO'
+    PHD = 'PH'
+    YEAR_IN_SCHOOL_CHOICES = [
+        (FRESHMAN, 'Freshman'),
+        (SOPHOMORE, 'Sophomore'),
+        (PHD, 'PHD')
+    ]
+    year_in_school = models.CharField(
+        max_length=2,
+        choices=YEAR_IN_SCHOOL_CHOICES,
+        default=FRESHMAN,
+    )
+
+    TEACHER = "1"
+    STUDENT = "2"
+    TYPE_CHOICES = (
+    ("1", "TCH"),
+    ("2", "STD"),
+    )  
+
+    COMPUTER = "1"
+    MATHEMATICAION = "2"
+    ELECTRIAL = "3"
+    PHYSICS = "4"
+    DEPT_CHOICES = (
+        ("1", "COMP"),
+        ("2", "MATH"),
+        ("3", "ELCT"),
+        ("4", "PHYS"),
+    )
+    department = models.CharField(
+        max_length=4,
+        choices=DEPT_CHOICES,
+        default=COMPUTER,
+    )
+    type = models.CharField(
+        max_length=3,
+        choices=TYPE_CHOICES,
+        default=STUDENT,
+    )
+
+
+"""
+class MyAccountManager(UserManager):
     def create_user(self, email, username, password=None):
         if not email:
             raise ValueError("Users must have an email")
@@ -35,7 +82,7 @@ class MyAccountManager(BaseUserManager):
 
 
 
-class Users(AbstractUser):
+class MyUsers(AbstractUser):
     FRESHMAN = 'FR'
     SOPHOMORE = 'SO'
     PHD = 'PH'
@@ -104,3 +151,4 @@ class Users(AbstractUser):
     def has_module_perms(self, app_label):
         return True
 # Create your models here.
+"""

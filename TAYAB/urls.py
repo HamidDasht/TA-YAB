@@ -21,7 +21,6 @@ urlpatterns = [
     path('prof/', include('teach_main.urls')),
     path('std/', include('std_main.urls')),
     path('admin/', admin.site.urls),
-    path('admin/', admin.site.urls),
     path('', reg.home , name="home"),
     path('home/', reg.loginPage , name="login"),
     path('logout/', reg.logoutPage , name="logout"),
