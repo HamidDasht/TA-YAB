@@ -1,38 +1,47 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GETTING STARTED WITH BRACKETS</title>
-        <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css" type="text/css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
-        <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        
-       
-        
-        <script src="https://kit.fontawesome.com/9f3cb03f5d.js"></script>
-        
-        <link rel="stylesheet" href="{% static 'stupage.css' %}"> 
-        <link rel="stylesheet" href="{% static 'leftsidebar.css' %}"> 
-    </head>
-    <body>
 
-    <div class="fixed-top">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GETTING STARTED WITH BRACKETS</title>
+  <meta name="description" content="An interactive getting started guide for Brackets.">
+  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
+  <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+
+
+
+  <script src="https://kit.fontawesome.com/9f3cb03f5d.js"></script>
+
+  <link rel="stylesheet" href="{% static 'stupage.css' %}">
+  <link rel="stylesheet" href="{% static 'leftsidebar.css' %}">
+</head>
+
+<body>
+
+  <div class="fixed-top">
     <nav class="navbar navbar-dark">
       <!--  
       <h2 class="navbar-brand" href="#">سامانه انتخاب دستیار آموزشی <i class="fas fa-chalkboard-teacher"></i></h2> -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="nav-h5">
-      <h5>سامانه انتخاب دستیار آموزشی  <!-- <i class="fas fa-chalkboard-teacher"></i>  دانشگاه صنعتی اصفهان --><img src="{% static 'iut2.png' %}" alt="picture can not found"> </h5> 
+        <h5>سامانه انتخاب دستیار آموزشی
+          <!-- <i class="fas fa-chalkboard-teacher"></i>  دانشگاه صنعتی اصفهان --><img src="{% static 'iut2.png' %}"
+            alt="picture can not found"> </h5>
       </div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent" style="direction: rtl;">
         <ul class="navbar-nav">
@@ -43,263 +52,295 @@
           <li class="nav-item active">
             <a class="nav-link" href="messages.html" data-toggle="modal" data-target="#staticBackdrop"> 
             <i class="fas fa-comment"></i> پیام ها <span class="badge badge-light badge-pill" style="position: relative; top: -1em;" >5</span></a>
-          </li>-->              
+          </li>-->
         </ul>
       </div>
-        
+
     </nav>
-    </div>
-    <div class="container-fluid allpage">
-      
-        <div class="row flex-xl-nowrap">
-           
-        <div class="col-lg-3 col-xl-3 pl-xl-4 pr-xl-4 pl-lg-0 bd-sidebar rightside">
-          
-            <nav class="navbar-expand-lg">
-                <div class="collapse navbar-collapse">
-                  <div class="profile">
-                    <div class="card">
-                      <img class="card-img-top" src="{% static 'profpic.png' %}" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title"> {{ std_name }} </h5>
-                        <p class="card-text">دانشکده مهندسی برق و کامپیوتر </p>
-                        <p class="card-text">گروه نرم افزار و فناوری اطلاعات </p>
-                      </div>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">  {{ email }} :
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z"/>
-                        </svg></li>
-                        <li class="list-group-item"> Student : <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        </svg></li>
-                      </ul>
-                      <div class="card-body text-right">
-                        <a href="#" class="card-link"> ویرایش اطلاعات <i class="fas fa-user-edit"></i> </a>
-                      </div>
-                    </div>  
-                   </div>
+  </div>
+  <div class="container-fluid allpage">
+
+    <div class="row flex-xl-nowrap">
+
+      <div class="col-lg-3 col-xl-3 pl-xl-4 pr-xl-4 pl-lg-0 bd-sidebar rightside">
+
+        <nav class="navbar-expand-lg">
+          <div class="collapse navbar-collapse">
+            <div class="profile">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'profpic.png' %}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"> {{ std_name }} </h5>
+                  <p class="card-text">دانشکده مهندسی برق و کامپیوتر </p>
+                  <p class="card-text">گروه نرم افزار و فناوری اطلاعات </p>
                 </div>
-            </nav>
-        </div>
-
-
-        <main class="col-md-8 col-lg-6 col-xl-6 py-md-3 pl-lg-0 pr-lg-3 pr-xl-4  bd-content nofixed" role="main">
-            
-        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" dir="ltr">
-        <div class="modal-content">
-          <div class="modal-header" id="chat-modal-header" style="display: none;"> 
-            <div class="right-msg">
-                <h5 class="modal-title card-title form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی  </h5>
-                <i class="fas fa-angle-left" style="text-align: left; font-size: 1.5em;  margin-top: 0.3em;"></i>
-            </div>  
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>   
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"> {{ email }} :
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-open" fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z" />
+                    </svg></li>
+                  <li class="list-group-item"> Student : <svg width="1em" height="1em" viewBox="0 0 16 16"
+                      class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg></li>
+                </ul>
+                <div class="card-body text-right">
+                  <a href="#" class="card-link"> ویرایش اطلاعات <i class="fas fa-user-edit"></i> </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-header" id="msg-modal-header"> 
-            <div class="right-msg">
-                <h5 class="modal-title mr-4"> پیام ها  </h5>
-            </div>  
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>   
-          </div>    
-          <div class="modal-body" style="padding: 0;" id="msg-modal-body">
-            <table class="table table-hover">
-              <tbody>
-                <tr>
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."><span class="badge badge-pill badge-primary">14</span> سارا برادران قهفرخی</h4>
-                  <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به <p>
-                  </td> 
-                </tr>
-                <tr>
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
-                  <p>کلاس فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به الو یک دو سه شلااام  <p>
-                  </td> 
-                </tr>
-                <tr>
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
-                  <p> سارا در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به کلاس  <p>
-                  </td> 
-                </tr>
-                <tr>
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."><span class="badge badge-pill badge-primary">2</span>  سارا برادران قهفرخی</h4>
-                  <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به کلاس <p>
-                  </td> 
-                </tr>
-                <tr>
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
-                  <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به کلاس <p>
-                  </td> 
-                </tr>
-                <tr>
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."><span class="badge badge-pill badge-primary">5</span> سارا برادران قهفرخی</h4>
-                  <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به اهای  اهاای الو کلاس سلام یک دو<p>
-                  </td> 
-                </tr>
-                <tr>
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
-                  <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به سلام <p>
-                  </td> 
-                </tr>                  
-                <tr>
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
-                  <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به کلاس <p>
-                  </td> 
-                </tr>
-                <tr>
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
-                  <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به کلاس ناس شتی  نسشا<p>
-                  </td> 
-                </tr>
-                <tr>  
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
-                  <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به  اره البته سلام یک </p>
-                  </td> 
-                </tr>
-                <tr>
-                  <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>   
-                  <td ><h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
-                  <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به </p>
-                  </td> 
-                </tr>                  
-              </tbody>
-            </table>    
-          </div>      
-          <div class="modal-body" id="chat-modal-body" style="display: none;">
-              
-              
-              
+        </nav>
+      </div>
+
+
+      <main class="col-md-8 col-lg-6 col-xl-6 py-md-3 pl-lg-0 pr-lg-3 pr-xl-4  bd-content nofixed" role="main">
+
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" dir="ltr">
+            <div class="modal-content">
+              <div class="modal-header" id="chat-modal-header" style="display: none;">
+                <div class="right-msg">
+                  <h5 class="modal-title card-title form-check-inline"> <img src="{% static 'profpic copy.png' %}"
+                      alt="..."> سارا برادران قهفرخی </h5>
+                  <i class="fas fa-angle-left" style="text-align: left; font-size: 1.5em;  margin-top: 0.3em;"></i>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-header" id="msg-modal-header">
+                <div class="right-msg">
+                  <h5 class="modal-title mr-4"> پیام ها </h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" style="padding: 0;" id="msg-modal-body">
+                <table class="table table-hover">
+                  <tbody>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."><span
+                            class="badge badge-pill badge-primary">14</span> سارا برادران قهفرخی</h4>
+                        <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به <p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
+                        <p>کلاس فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به الو یک دو سه شلااام <p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
+                        <p> سارا در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به کلاس <p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."><span
+                            class="badge badge-pill badge-primary">2</span> سارا برادران قهفرخی</h4>
+                        <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به کلاس <p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
+                        <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به کلاس <p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."><span
+                            class="badge badge-pill badge-primary">5</span> سارا برادران قهفرخی</h4>
+                        <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به اهای اهاای الو کلاس سلام یک
+                          دو<p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
+                        <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به سلام <p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
+                        <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به کلاس <p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
+                        <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به کلاس ناس شتی نسشا<p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
+                        <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به اره البته سلام یک </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-right: 0; width: 5%;"><i class="fas fa-angle-left"></i></td>
+                      <td>
+                        <h4><img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی</h4>
+                        <p> فلان در روز یکشنبه مراجعه نمایید با سلام لطفا جهت دیدن نمرات به </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-body" id="chat-modal-body" style="display: none;">
+
+
+
                 <div class="card border-white">
-                    
-                    <div class="card-body" id="modal-msg">  
-                       <div class="row">
-                            <div class="col-sm-12 col-sm-6">
-                              <div class="card card-body border-white right-msg">
-                                  <h5 class="card-title form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی  </h5>
-                                  <div class="msg">
-                                  <p class="card-text form-check-inline"> سلام دو سه  ؟ </p>
-                                  <p class="timelabel"><small class="text-muted"> 13:40 </small></p>
-                                  </div>
 
-                              </div>                             
-                              <div class="card card-body border-white right-msg">
-                                  <div class="msg">
-                                  <p class="card-text form-check-inline"> سلام خری ؟ </p>
-                                  <p class="timelabel"><small class="text-muted"> 13:40 </small></p>
-                                  </div>      
-                              </div>
-                              <div class="card card-body border-white left-msg">
-                                  <h5 class="card-title form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> مهدی حیدری  </h5>
-                                  <div class="msg">
-                                  <p class="card-text form-check-inline"> سلام خری ؟ </p>
-                                  <p class="timelabel"><small class="text-muted"> 15:40 </small></p>
-                                  </div>
+                  <div class="card-body" id="modal-msg">
+                    <div class="row">
+                      <div class="col-sm-12 col-sm-6">
+                        <div class="card card-body border-white right-msg">
+                          <h5 class="card-title form-check-inline"> <img src="{% static 'profpic copy.png' %}"
+                              alt="..."> سارا برادران قهفرخی </h5>
+                          <div class="msg">
+                            <p class="card-text form-check-inline"> سلام دو سه ؟ </p>
+                            <p class="timelabel"><small class="text-muted"> 13:40 </small></p>
+                          </div>
 
-                              </div>
-                              <h6 class="msg-date text-muted"> 2 تیر 1399 </h6>
-
-                              <div class="card card-body border-white left-msg">
-                                  <div class="msg">
-                                  <p class="card-text form-check-inline"> است یک دو سه  سلام آیا تو  یک دو سه  سلام خری؟ </p>
-                                  <p class="timelabel"><small class="text-muted"> 16:40 </small></p>
-                                  </div>
-
-                              </div> 
-
-                              <div class="card card-body border-white left-msg">
-                                  <div class="msg">
-                                  <p class="card-text form-check-inline"> الو سلامم دیگه نمیتونم از فکرت درآم من هنوزم مث قبلنام هنو مثل نفسی براام الو سلام دیگه نمیتونم از فکرت درآم </p>
-                                  <p class="timelabel"><small class="text-muted"> 13:40 </small></p>
-                                  </div>
-
-                              </div> 
-
-                              <h6 class="msg-date text-muted"> 3 تیر 1399 </h6>
-
-                              <div class="card card-body border-white left-msg">
-                                  <div class="msg">
-                                  <p class="card-text form-check-inline"> است یک دو سه  سلام آیا تو  یک دو سه  سلام خری ؟ </p>
-                                  <p class="timelabel"><small class="text-muted"> 16:40 </small></p>
-                                  </div>
-
-                              </div> 
-
-                              <div class="card card-body border-white right-msg">
-                                  <h5 class="card-title form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> سارا برادران قهفرخی  </h5>
-                                  <div class="msg">
-                                  <p class="card-text form-check-inline"> سلام حال شما چطور است یک دو سه  سلام آیا تو سلام حال شما چطور است یک دو سه  سلام آیا تو  یک دو سه  سلام خری ؟ </p>
-                                  <p class="timelabel"><small class="text-muted"> 13:40 </small></p>
-                                  </div>
-
-                              </div>  
-                            </div>
                         </div>
-                    </div>
+                        <div class="card card-body border-white right-msg">
+                          <div class="msg">
+                            <p class="card-text form-check-inline"> سلام خری ؟ </p>
+                            <p class="timelabel"><small class="text-muted"> 13:40 </small></p>
+                          </div>
+                        </div>
+                        <div class="card card-body border-white left-msg">
+                          <h5 class="card-title form-check-inline"> <img src="{% static 'profpic copy.png' %}"
+                              alt="..."> مهدی حیدری </h5>
+                          <div class="msg">
+                            <p class="card-text form-check-inline"> سلام خری ؟ </p>
+                            <p class="timelabel"><small class="text-muted"> 15:40 </small></p>
+                          </div>
 
-                </div>        
-          </div>
-          <div class="modal-footer border-white" id="chat-modal-footer"  style="display: none;">
-                <form>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <button class="btn btn-primary" type="button" id="button-addon1"> <i class="fas fa-paper-plane"></i> </button>
+                        </div>
+                        <h6 class="msg-date text-muted"> 2 تیر 1399 </h6>
+
+                        <div class="card card-body border-white left-msg">
+                          <div class="msg">
+                            <p class="card-text form-check-inline"> است یک دو سه سلام آیا تو یک دو سه سلام خری؟ </p>
+                            <p class="timelabel"><small class="text-muted"> 16:40 </small></p>
+                          </div>
+
+                        </div>
+
+                        <div class="card card-body border-white left-msg">
+                          <div class="msg">
+                            <p class="card-text form-check-inline"> الو سلامم دیگه نمیتونم از فکرت درآم من هنوزم مث
+                              قبلنام هنو مثل نفسی براام الو سلام دیگه نمیتونم از فکرت درآم </p>
+                            <p class="timelabel"><small class="text-muted"> 13:40 </small></p>
+                          </div>
+
+                        </div>
+
+                        <h6 class="msg-date text-muted"> 3 تیر 1399 </h6>
+
+                        <div class="card card-body border-white left-msg">
+                          <div class="msg">
+                            <p class="card-text form-check-inline"> است یک دو سه سلام آیا تو یک دو سه سلام خری ؟ </p>
+                            <p class="timelabel"><small class="text-muted"> 16:40 </small></p>
+                          </div>
+
+                        </div>
+
+                        <div class="card card-body border-white right-msg">
+                          <h5 class="card-title form-check-inline"> <img src="{% static 'profpic copy.png' %}"
+                              alt="..."> سارا برادران قهفرخی </h5>
+                          <div class="msg">
+                            <p class="card-text form-check-inline"> سلام حال شما چطور است یک دو سه سلام آیا تو سلام حال
+                              شما چطور است یک دو سه سلام آیا تو یک دو سه سلام خری ؟ </p>
+                            <p class="timelabel"><small class="text-muted"> 13:40 </small></p>
+                          </div>
+
+                        </div>
                       </div>
-                      <textarea type="text" class="form-control" placeholder="پیام خود را بنویسید ..." rows="2"></textarea>   
                     </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="modal-footer border-white" id="chat-modal-footer" style="display: none;">
+                <form>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-primary" type="button" id="button-addon1"> <i
+                          class="fas fa-paper-plane"></i> </button>
+                    </div>
+                    <textarea type="text" class="form-control" placeholder="پیام خود را بنویسید ..."
+                      rows="2"></textarea>
+                  </div>
                 </form>
+              </div>
+            </div>
           </div>
-       </div>
-       </div>
-       </div>            
+        </div>
         <div class="my_requests">
-            <div class="card border-white">
-                <div class="card-header bg-white" style="padding-bottom: 0; box-shadow: 0px 7px 7px -5px #ddd">
-                    <h5 class="mb-sm-1 mb-md-0"> درخواست ها </h5>              
-                    <ul class="nav nav-pills" id="pills-tab" role="tablist"  dir="ltr" style="">
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><span class="badge badge-pill badge-danger">2</span> همه درخواست ها </a>
-                      </li>
-                      <!--
+          <div class="card border-white">
+            <div class="card-header bg-white" style="padding-bottom: 0; box-shadow: 0px 7px 7px -5px #ddd">
+              <h5 class="mb-sm-1 mb-md-0"> درخواست ها </h5>
+              <ul class="nav nav-pills" id="pills-tab" role="tablist" dir="ltr" style="">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                    aria-controls="pills-home" aria-selected="true"><span class="badge badge-pill badge-danger">2</span>
+                    همه درخواست ها </a>
+                </li>
+                <!--
                       <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"> پاسخ ها </a>
                       </li>
                       <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">ذخیره شده</a>
                       </li>-->
-                    </ul>
-                </div>
-                <div class="modal fade" id="SendReplayCard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"> مبانی رایانش امن </h5>  
+              </ul>
+            </div>
+            <div class="modal fade" id="SendReplayCard" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> مبانی رایانش امن </h5>
+                  </div>
+                  <div class="modal-body">
+                    <form id="myform" method="POST">{% csrf_token %}
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">ارسال به :</label>
+                        <input type="text" class="form-control" id="recipient-name" value="مریم موزرانی" readonly>
                       </div>
-                      <div class="modal-body">
-                        <form id="myform" method="POST">{% csrf_token %}
-                          <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">ارسال به :</label>
-                            <input type="text" class="form-control" id="recipient-name" value="مریم موزرانی" readonly>
-                          </div>
-                          <div class="form-group">
-                            <label for="message-text" class="col-form-label">متن پاسخ :</label>
-                            <textarea class="form-control" name="message-text" id="message-text" rows="3" required></textarea>
-                          </div>
-                          <h5 class="mt-4"> ساعات حضور دستیار</h5>
-                          <hr class="mb-4">
-                          <!--
+                      <div class="form-group">
+                        <label for="message-text" class="col-form-label">متن پاسخ :</label>
+                        <textarea class="form-control" name="message-text" id="message-text" rows="3"
+                          required></textarea>
+                      </div>
+                      <h5 class="mt-4"> ساعات حضور دستیار</h5>
+                      <hr class="mb-4">
+                      <!--
                           <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
                             <label class="custom-control-label" for="customControlAutosizing">روز چهارشنبه 8:30 - 10:30 </label>
@@ -309,85 +350,93 @@
                             <label class="custom-control-label" for="customControlAutosizing1">10:30 - 12:30 روز شنبه </label>
                           </div>
                           -->
-                          <small> لطفا ساعات مورد نظر خود را انتخاب کنید </small>
+                      <small> لطفا ساعات مورد نظر خود را انتخاب کنید </small>
 
-                        <!--</form>-->
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">انصراف</button>
-                        <button type="submit" class="btn btn-success">ارسال پاسخ</button>
-                      </div>
-                    </form>
-                    </div>
+                      <!--</form>-->
                   </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">انصراف</button>
+                    <button type="submit" class="btn btn-success">ارسال پاسخ</button>
+                  </div>
+                  </form>
                 </div>
-                <div class="tab-content" id="pills-tabContent" style="padding-top: 0.3em;">
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-<!--                    <div class="card-body" style="padding-left: 0; padding-right: 0;">-->
-                    <div class="card-body" style="padding: 1em 0 1em 0;">
-                      <div id = "Requests">
-                          
-                         
-                         <div class="card" id="no-request" style="display: none;">
-                            <h5>هیچ درخواستی موجود نمی باشد.</h5> 
-                          
-                         </div> 
-                         <div class="card">
-                          {% if success %}
-                          <p  class="alert alert-success">پاسخ با موفقیت برای درس مورد نظر ارسال شد </p>
-                          <br />
-                          {% endif %}
-                          <table class="table">
-                            {% for request in requests %}
-                            <tbody>
-                            
-                            <tr>
-                              <td scope="row" style="border-top: none;"> 
-                                <div class="card border-white" style="max-width: 900px;">
-                                  <div class="card-header border-info form-check-inline"> 
-                                    <div class="teacher-name">
-                                    <p class="form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> استاد {{ request.prof_fname }}  {{ request.prof_lname }}  </p> 
-                                    </div>                                  
-                                    <div class="icons">
-                                        <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
-                                        <i class="far fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="ذخیره درخواست"></i>
-                                    </div> 
-                                  </div>
+              </div>
+            </div>
+            <div class="tab-content" id="pills-tabContent" style="padding-top: 0.3em;">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <!--                    <div class="card-body" style="padding-left: 0; padding-right: 0;">-->
+                <div class="card-body" style="padding: 1em 0 1em 0;">
+                  <div id="Requests">
 
-                                  <div class="card-body">
-                                    <a href="#"><h5 class="card-title"> {{ request.course_name }} </h5></a>
-                                    <!--<p class="card-text p-text"> {{ request.description }}</p>-->
-                                    <p>{{ request.description }}</p>
-                                    {% if request.masters %}
-                                    <h5><span class="badge badge-danger">دانشجو ارشد</span></h5>
-                                    {% endif %}
-                                    {% if request.bachelor %}
-                                    <span class="badge badge-warning">دانشجو کارشناسی</span></h5>
-                                    {% endif %}
-                                    <p class="card-text"><small class="text-muted">  {{ request.date }} </small> 
-                                      {% csrf_token %}
-                                    <a  class="btn btn-success btn-md send_rep" value='{{ request.id }}' href="#" role="button" data-toggle="modal" data-target="#SendReplayCard" data-whatever=""><i class="fas fa-reply"></i> ارسال پاسخ </a>  
-                                    
+
+                    <div class="card" id="no-request" style="display: none;">
+                      <h5>هیچ درخواستی موجود نمی باشد.</h5>
+
+                    </div>
+                    <div class="card">
+                      {% if success %}
+                      <p class="alert alert-success">پاسخ با موفقیت برای درس مورد نظر ارسال شد </p>
+                      <br />
+                      {% endif %}
+                      <table class="table">
+                        {% for request in requests %}
+                        <tbody>
+
+                          <tr>
+                            <td scope="row" style="border-top: none;">
+                              <div class="card border-white" style="max-width: 900px;">
+                                <div class="card-header border-info form-check-inline">
+                                  <div class="teacher-name">
+                                    <p class="form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="...">
+                                      استاد {{ request.prof_fname }} {{ request.prof_lname }} </p>
                                   </div>
-                               </div>
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                          {% endfor %}
-                        </table>
-                        <div class="card-footer">
+                                  <div class="icons">
+                                    <i class="fas fa-share-alt btn border-secondary text-secondary"
+                                      data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
+                                    <i class="far fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip"
+                                      data-placement="top" title="ذخیره درخواست"></i>
+                                  </div>
+                                </div>
+
+                                <div class="card-body">
+                                  <a href="#">
+                                    <h5 class="card-title"> {{ request.course_name }} </h5>
+                                  </a>
+                                  <!--<p class="card-text p-text"> {{ request.description }}</p>-->
+                                  <p>{{ request.description }}</p>
+                                  {% if request.masters %}
+                                  <h5><span class="badge badge-danger">دانشجو ارشد</span></h5>
+                                  {% endif %}
+                                  {% if request.bachelor %}
+                                  <span class="badge badge-warning">دانشجو کارشناسی</span></h5>
+                                  {% endif %}
+                                  <p class="card-text"><small class="text-muted"> {{ request.date }} </small>
+                                    {% csrf_token %}
+                                    <a class="btn btn-success btn-md send_rep" value='{{ request.id }}' href="#"
+                                      role="button" data-toggle="modal" data-target="#SendReplayCard"
+                                      data-whatever=""><i class="fas fa-reply"></i> ارسال پاسخ </a>
+
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                      <div class="card-footer">
                         <nav id="page-counter" class="bg-light">
-                          <ul class="pagination">  
+                          <ul class="pagination">
                             <li class="page-item" style=" white-space: nowrap;">
                               {% if requests.has_previous %}
-                              <a class="page-link" href="{% url 'index' %}?page={{requests.previous_page_number}}" aria-label="Previous">
+                              <a class="page-link" href="{% url 'index' %}?page={{requests.previous_page_number}}"
+                                aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
-                                  قبلی
+                                قبلی
                               </a>
                               {% endif %}
-                            </li> 
-                              <!--
+                            </li>
+                            <!--
                             
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -396,342 +445,387 @@
                             <li class="page-item"><a class="page-link" href="#">5</a></li>
                             <li class="page-item"><a class="page-link" href="#">6</a></li>
                             <li class="page-item" style=" white-space: nowrap;">-->
-                              <li class="page-item" style=" white-space: nowrap;"></li>
-                              {% if requests.has_next %}
-                              <a class="page-link" href="{% url 'index' %}?page={{requests.next_page_number}}" aria-label="Next">بعدی
-                                <span aria-hidden="true">&raquo;</span>
-                              </a>
-                              {% endif %}
+                            <li class="page-item" style=" white-space: nowrap;"></li>
+                            {% if requests.has_next %}
+                            <a class="page-link" href="{% url 'index' %}?page={{requests.next_page_number}}"
+                              aria-label="Next">بعدی
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                            {% endif %}
                             </li>
                           </ul>
                         </nav>
-                        </div>     
-                        </div>   
-                      </div>  
-                      </div>                    
-                  </div>
-
-                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">      
-                  <div class="card-body" style="padding: 1em 0 1em 0;">
-                      <div id = "Requests">
-                         <div class="card">
-                          <table class="table">
-                          <tbody>
-                            <tr>
-                              <td scope="row" style="border-top: none;"> 
-                                <div class="card border-white" style="max-width: 900px;">
-                                  <div class="card-header border-info form-check-inline"> 
-                                    <div class="teacher-name">
-                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> استاد الهام محمودزاده </p>    
-                                    </div>                                  
-                                    <div class="icons">
-                                        <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
-                                        <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
-                                    </div> 
-                                  </div>
-
-                                  <div class="card-body">
-                                    <a href="#"><h5 class="card-title"> مبانی رایانش امن </h5></a>
-                                    <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                                    <h5><span class="badge badge-danger">دانشجو ارشد</span></h5><hr>
-                                    <p class="card-text"><small class="text-muted">  3 روز پیش </small>
-                                    <a class="btn btn-success btn-md" href="#" role="button" data-toggle="modal" data-target="#SendReplayCard" data-whatever=""><i class="fas fa-reply"></i> ارسال پاسخ </a>  
-                                  </div>
-                               </div>
-
-                              </td>
-
-                            </tr>
-                            <tr>
-                              <td scope="row">
-                                <div class="card border-white" style="max-width: 900px;">
-                                  <div class="card-header border-info form-check-inline"> 
-                                    <div class="teacher-name">
-                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> استاد الهام محمودزاده </p>    
-                                    </div>                                  
-                                    <div class="icons">
-                                        <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
-                                        <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
-                                    </div> 
-                                  </div>
-                                  <div class="card-body">
-                                    <a href="#"><h5 class="card-title"> مبانی رایانش امن </h5></a>
-                                    <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                                    <h5><span class="badge badge-warning">دانشجو کارشناسی</span></h5> 
-                                    <p class="card-text"><small class="text-muted">  3 روز پیش </small> 
-                                    <a class="btn btn-success btn-md" href="#" role="button" data-toggle="modal" data-target="#SendReplayCard" data-whatever=""><i class="fas fa-reply"></i> ارسال پاسخ </a>  
-                                  </div>
-                               </div>
-
-                              </td>
-
-                            </tr>  
-                            <tr>
-                              <td scope="row">
-                                <div class="card border-white" style="max-width: 900px;">
-                                  <div class="card-header border-info form-check-inline"> 
-                                    <div class="teacher-name">
-                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> استاد الهام محمودزاده </p>    
-                                    </div>                                  
-                                    <div class="icons">
-                                        <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
-                                        <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
-                                    </div> 
-                                  </div>
-                                  <div class="card-body">
-                                    <a href="#"><h5 class="card-title"> مبانی رایانش امن </h5></a>                                 
-                                    <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                                    <h5><span class="badge badge-danger">دانشجو ارشد</span><span class="badge badge-warning">دانشجو کارشناسی</span></h5>
-                                    <p class="card-text"><small class="text-muted">  3 روز پیش </small> 
-                                    <a class="btn btn-success btn-md" href="#" role="button" data-toggle="modal" data-target="#SendReplayCard" data-whatever=""><i class="fas fa-reply"></i> ارسال پاسخ </a>  
-                                  </div>
-                                </div>
-
-                              </td>
-
-                            </tr>
-                          </tbody>
-                        </table>
-                        <div class="card-footer">
-                        <nav id="page-counter" class="bg-light">
-                          <ul class="pagination">  
-                            <li class="page-item" style=" white-space: nowrap;">
-                              <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                  قبلی
-                              </a>
-                            </li> 
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-                            <li class="page-item" style=" white-space: nowrap;">
-                              <a class="page-link" href="#" aria-label="Next">بعدی
-                                <span aria-hidden="true">&raquo;</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </nav>
-                        </div>     
-                        </div>   
-                      </div>  
-                      </div> 
-                  </div>
-                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                  <div class="card-body" style="padding: 1em 0 1em 0;">
-                      <div id = "Requests">
-                         <div class="card">
-                          <table class="table">
-                          <tbody>
-                            <tr>
-                              <td scope="row" style="border-top: none;"> 
-                                <div class="card border-white" style="max-width: 900px;">
-                                  <div class="card-header border-info form-check-inline"> 
-                                    <div class="teacher-name">
-                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> استاد الهام محمودزاده </p>    
-                                    </div>                                 
-                                    <div class="icons">
-                                        <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
-                                        <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
-                                    </div> 
-                                  </div>
-
-                                  <div class="card-body">
-                                    <a href="#"><h5 class="card-title"> مبانی رایانش امن </h5></a>
-                                    <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                                    <h5><span class="badge badge-danger">دانشجو ارشد</span></h5>
-                                      <div class="alert border-info" role="alert">
-                                        
-                                       <p>
-                                           <i class="fas fa-reply"></i>
-                                           با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت  نشسا نتسی شسنت یشس 
-                                       </p>
-                                      </div>    
-                                      <p class="card-text"><small class="text-muted">  3 روز پیش </small> 
-                                      <small class="text-muted">  بررسی نشده <i class="far fa-eye-slash"></i> </small></p>
-<!--                                    <a href="#" class="alert-link">جزئیات بیشتر </a>    -->
-                                  </div>
-                               </div>
-
-                              </td>
-
-                            </tr>
-                            <tr>
-                              <td scope="row">
-                                <div class="card border-white" style="max-width: 900px;">
-                                  <div class="card-header border-info form-check-inline"> 
-                                    <div class="teacher-name">
-                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> استاد الهام محمودزاده </p>    
-                                    </div>                                  
-                                    <div class="icons">
-                                        <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
-                                        <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
-                                    </div> 
-                                  </div>
-                                  <div class="card-body">
-                                    <a href="#"><h5 class="card-title"> مبانی رایانش امن </h5></a>
-                                    <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                                    <h5><span class="badge badge-warning">دانشجو کارشناسی</span></h5> 
-                                      <div class="alert border-info" role="alert">
-                                        
-                                       <p>
-                                           <i class="fas fa-reply"></i>
-                                            تنشس تسی ت سنتش با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت سلام یک دو
-                                       </p>
-                                      </div>      
-                                      <p class="card-text"><small class="text-muted">  3 روز پیش </small> 
-                                      <small class="text-muted">  بررسی شده <i class="far fa-eye"></i> </small>
-                                      <span class="badge badge-success state"> پذیرفته شده </span>      
-                                      </p> 
-                                      
-                                  </div>
-                               </div>
-
-                              </td>
-
-                            </tr>  
-                            <tr>
-                              <td scope="row">
-                                <div class="card border-white" style="max-width: 900px;">
-                                  <div class="card-header border-info form-check-inline"> 
-                                    <div class="teacher-name">
-                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="..."> استاد الهام محمودزاده </p>    
-                                    </div>                                  
-                                    <div class="icons">
-                                        <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
-                                        <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
-                                    </div> 
-                                  </div>
-                                  <div class="card-body">
-                                    <a href="#"><h5 class="card-title"> مبانی رایانش امن </h5></a>                                 
-                                    <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند  </p> 
-                                    <h5><span class="badge badge-danger">دانشجو ارشد</span><span class="badge badge-warning">دانشجو کارشناسی</span></h5>
-                                      <div class="alert border-info" role="alert">
-                                        
-                                       <p>
-                                           <i class="fas fa-reply"></i>
-                                           با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت سلام شمتس شتس شتسا
-                                       </p>
-                                      </div>    
-                                      <p class="card-text"><small class="text-muted">  3 روز پیش </small> 
-                                      <small class="text-muted">  بررسی شده <i class="far fa-eye"></i> </small>
-                                      <span class="badge badge-danger state"> رد شده </span>      
-                                      </p>
-                                  </div>
-                                </div>
-
-                              </td>
-
-                            </tr>
-                          </tbody>
-                        </table>
-                        <div class="card-footer">
-                        <nav id="page-counter" class="bg-light">
-                          <ul class="pagination">  
-                            <li class="page-item" style=" white-space: nowrap;">
-                              <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                  قبلی
-                              </a>
-                            </li> 
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-                            <li class="page-item" style=" white-space: nowrap;">
-                              <a class="page-link" href="#" aria-label="Next">بعدی
-                                <span aria-hidden="true">&raquo;</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </nav>
-                        </div>     
-                        </div>   
-                        </div>  
-                      </div>                      
-                  </div>
-                </div>
-            </div>    
-        </div>
-        </main>
-
-
-        <div class="col-md-4 col-lg-3 col-xl-3 pl-xl-4 pr-xl-5 pr-lg-3 pr-lg-3 bd-sidebar">
-            
-          <div class="leftside">
-                   
-            <div class="card card-body searchbox">
-                            <form>
-                                <div class="col-md-12 col-lg-12 col-xl-12" style="direction: ltr">                                                     
-                                <div class="input-group">
-                                  <div class="input-group-prepend">
-                                    <button class="btn btn-success" type="button" id="button-addon1"> <i class="fas fa-search"></i> </button>
-                                  </div>
-                                  <input type="search" class="form-control" placeholder="جستجو" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                                </div>
-                                </div>
-                            </form> 
                       </div>
-                      
-                <div class="courses">
-
-                    <ul class="list-group">
-
-                  
-                      <li class="list-group-item course-title"> <div class="text-muted"><i class="fas fa-book"></i> درس ها  </div></li>
-                    
-                      <li class="list-group-item"> 
-                      <a class="firstlistitem" data-toggle="collapse" href=".term98-99-2" role="button" aria-expanded="true" aria-controls="term98-99-2">
-                      <i class="fas fa-angle-down"></i> ترم دو سال تحصیلی 98-99 
-                      </a>
-                      </li>      
-                      
-                      <li class="list-group-item collapse show term98-99-2"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
-                      <li class="list-group-item collapse show term98-99-2"> <a href="course.html">آزمایشگاه برنامه نویسی پیشرفته</a></li>
-                      <li class="list-group-item collapse show term98-99-2"> <a href="course.html">مبانی رایانش امن</a></li>
-                      <li class="list-group-item collapse show term98-99-2"> <a href="course.html">توسعه امن نرم افزار</a></li>
-                    
-                      
-                      <li class="list-group-item"> 
-                      <a class="firstlistitem" data-toggle="collapse" href=".term98-99-1" role="button" aria-expanded="false" aria-controls="term98-99-1">
-                      <i class="fas fa-angle-down"></i> ترم یک سال تحصیلی 98-99 
-                      </a>
-                      </li>
-                        
-                      <li class="list-group-item collapse term98-99-1"> <a href="course.html">طراحی کامپایلر</a></li>
-                      <li class="list-group-item collapse term98-99-1"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
-                        
-                      <li class="list-group-item"> 
-                      <a class="firstlistitem" data-toggle="collapse" href=".term97-98-2" role="button" aria-expanded="false" aria-controls="term97-98-2">
-                      <i class="fas fa-angle-down"></i> ترم دو سال تحصیلی 97-98 
-                      </a>
-                      </li>
-                        
-                      <li class="list-group-item collapse term97-98-2"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
-                      <li class="list-group-item collapse term97-98-2"> <a href="course.html">طراحی کامپایلر</a></li>
-                      <li class="list-group-item collapse term97-98-2"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
-                        
-                    </ul>
+                    </div>
+                  </div>
                 </div>
-             </div>  
-        </div>
-        </div>
-    </div>
-        
-        <div class="col-xl-12 bottomnav">
-        <div class="jumbotron">
-        <!--  <img src="{% static 'iut2.png' %}" alt="picture can not found"> -->
-          <hr class="my-4">
-          <p> راه اندازی شده توسط دانشگاه صنعتی اصفهان</p>
-          <p> دانشکده مهندسی برق و کامپیوتر </p>
-        </div>
-        </div>
-  
-        <script src="{% static 'stupage.js' %}"></script>     
-</body>
-</html>
+              </div>
 
+              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="card-body" style="padding: 1em 0 1em 0;">
+                  <div id="Requests">
+                    <div class="card">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td scope="row" style="border-top: none;">
+                              <div class="card border-white" style="max-width: 900px;">
+                                <div class="card-header border-info form-check-inline">
+                                  <div class="teacher-name">
+                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="...">
+                                      استاد الهام محمودزاده </p>
+                                  </div>
+                                  <div class="icons">
+                                    <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
+                                    <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
+                                  </div>
+                                </div>
+
+                                <div class="card-body">
+                                  <a href="#">
+                                    <h5 class="card-title"> مبانی رایانش امن </h5>
+                                  </a>
+                                  <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می
+                                    توانند جهت همکاری پیام دهند. </p>
+                                  <h5><span class="badge badge-danger">دانشجو ارشد</span></h5>
+                                  <hr>
+                                  <p class="card-text"><small class="text-muted"> 3 روز پیش </small>
+                                    <a class="btn btn-success btn-md" href="#" role="button" data-toggle="modal"
+                                      data-target="#SendReplayCard" data-whatever=""><i class="fas fa-reply"></i> ارسال
+                                      پاسخ </a>
+                                </div>
+                              </div>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              <div class="card border-white" style="max-width: 900px;">
+                                <div class="card-header border-info form-check-inline">
+                                  <div class="teacher-name">
+                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="...">
+                                      استاد الهام محمودزاده </p>
+                                  </div>
+                                  <div class="icons">
+                                    <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
+                                    <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
+                                  </div>
+                                </div>
+                                <div class="card-body">
+                                  <a href="#">
+                                    <h5 class="card-title"> مبانی رایانش امن </h5>
+                                  </a>
+                                  <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می
+                                    توانند جهت همکاری پیام دهند. </p>
+                                  <h5><span class="badge badge-warning">دانشجو کارشناسی</span></h5>
+                                  <p class="card-text"><small class="text-muted"> 3 روز پیش </small>
+                                    <a class="btn btn-success btn-md" href="#" role="button" data-toggle="modal"
+                                      data-target="#SendReplayCard" data-whatever=""><i class="fas fa-reply"></i> ارسال
+                                      پاسخ </a>
+                                </div>
+                              </div>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              <div class="card border-white" style="max-width: 900px;">
+                                <div class="card-header border-info form-check-inline">
+                                  <div class="teacher-name">
+                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="...">
+                                      استاد الهام محمودزاده </p>
+                                  </div>
+                                  <div class="icons">
+                                    <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
+                                    <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
+                                  </div>
+                                </div>
+                                <div class="card-body">
+                                  <a href="#">
+                                    <h5 class="card-title"> مبانی رایانش امن </h5>
+                                  </a>
+                                  <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می
+                                    توانند جهت همکاری پیام دهند. </p>
+                                  <h5><span class="badge badge-danger">دانشجو ارشد</span><span
+                                      class="badge badge-warning">دانشجو کارشناسی</span></h5>
+                                  <p class="card-text"><small class="text-muted"> 3 روز پیش </small>
+                                    <a class="btn btn-success btn-md" href="#" role="button" data-toggle="modal"
+                                      data-target="#SendReplayCard" data-whatever=""><i class="fas fa-reply"></i> ارسال
+                                      پاسخ </a>
+                                </div>
+                              </div>
+
+                            </td>
+
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="card-footer">
+                        <nav id="page-counter" class="bg-light">
+                          <ul class="pagination">
+                            <li class="page-item" style=" white-space: nowrap;">
+                              <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                قبلی
+                              </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                            <li class="page-item" style=" white-space: nowrap;">
+                              <a class="page-link" href="#" aria-label="Next">بعدی
+                                <span aria-hidden="true">&raquo;</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="card-body" style="padding: 1em 0 1em 0;">
+                  <div id="Requests">
+                    <div class="card">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td scope="row" style="border-top: none;">
+                              <div class="card border-white" style="max-width: 900px;">
+                                <div class="card-header border-info form-check-inline">
+                                  <div class="teacher-name">
+                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="...">
+                                      استاد الهام محمودزاده </p>
+                                  </div>
+                                  <div class="icons">
+                                    <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
+                                    <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
+                                  </div>
+                                </div>
+
+                                <div class="card-body">
+                                  <a href="#">
+                                    <h5 class="card-title"> مبانی رایانش امن </h5>
+                                  </a>
+                                  <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می
+                                    توانند جهت همکاری پیام دهند. </p>
+                                  <h5><span class="badge badge-danger">دانشجو ارشد</span></h5>
+                                  <div class="alert border-info" role="alert">
+
+                                    <p>
+                                      <i class="fas fa-reply"></i>
+                                      با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت نشسا
+                                      نتسی شسنت یشس
+                                    </p>
+                                  </div>
+                                  <p class="card-text"><small class="text-muted"> 3 روز پیش </small>
+                                    <small class="text-muted"> بررسی نشده <i class="far fa-eye-slash"></i> </small></p>
+                                  <!--                                    <a href="#" class="alert-link">جزئیات بیشتر </a>    -->
+                                </div>
+                              </div>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              <div class="card border-white" style="max-width: 900px;">
+                                <div class="card-header border-info form-check-inline">
+                                  <div class="teacher-name">
+                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="...">
+                                      استاد الهام محمودزاده </p>
+                                  </div>
+                                  <div class="icons">
+                                    <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
+                                    <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
+                                  </div>
+                                </div>
+                                <div class="card-body">
+                                  <a href="#">
+                                    <h5 class="card-title"> مبانی رایانش امن </h5>
+                                  </a>
+                                  <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می
+                                    توانند جهت همکاری پیام دهند. </p>
+                                  <h5><span class="badge badge-warning">دانشجو کارشناسی</span></h5>
+                                  <div class="alert border-info" role="alert">
+
+                                    <p>
+                                      <i class="fas fa-reply"></i>
+                                      تنشس تسی ت سنتش با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده
+                                      ام در صورت سلام یک دو
+                                    </p>
+                                  </div>
+                                  <p class="card-text"><small class="text-muted"> 3 روز پیش </small>
+                                    <small class="text-muted"> بررسی شده <i class="far fa-eye"></i> </small>
+                                    <span class="badge badge-success state"> پذیرفته شده </span>
+                                  </p>
+
+                                </div>
+                              </div>
+
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td scope="row">
+                              <div class="card border-white" style="max-width: 900px;">
+                                <div class="card-header border-info form-check-inline">
+                                  <div class="teacher-name">
+                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="...">
+                                      استاد الهام محمودزاده </p>
+                                  </div>
+                                  <div class="icons">
+                                    <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
+                                    <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
+                                  </div>
+                                </div>
+                                <div class="card-body">
+                                  <a href="#">
+                                    <h5 class="card-title"> مبانی رایانش امن </h5>
+                                  </a>
+                                  <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می
+                                    توانند جهت همکاری پیام دهند </p>
+                                  <h5><span class="badge badge-danger">دانشجو ارشد</span><span
+                                      class="badge badge-warning">دانشجو کارشناسی</span></h5>
+                                  <div class="alert border-info" role="alert">
+
+                                    <p>
+                                      <i class="fas fa-reply"></i>
+                                      با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت سلام
+                                      شمتس شتس شتسا
+                                    </p>
+                                  </div>
+                                  <p class="card-text"><small class="text-muted"> 3 روز پیش </small>
+                                    <small class="text-muted"> بررسی شده <i class="far fa-eye"></i> </small>
+                                    <span class="badge badge-danger state"> رد شده </span>
+                                  </p>
+                                </div>
+                              </div>
+
+                            </td>
+
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="card-footer">
+                        <nav id="page-counter" class="bg-light">
+                          <ul class="pagination">
+                            <li class="page-item" style=" white-space: nowrap;">
+                              <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                قبلی
+                              </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                            <li class="page-item" style=" white-space: nowrap;">
+                              <a class="page-link" href="#" aria-label="Next">بعدی
+                                <span aria-hidden="true">&raquo;</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+
+      <div class="col-md-4 col-lg-3 col-xl-3 pl-xl-4 pr-xl-5 pr-lg-3 pr-lg-3 bd-sidebar">
+
+        <div class="leftside">
+
+          <div class="card card-body searchbox">
+            <form>
+              <div class="col-md-12 col-lg-12 col-xl-12" style="direction: ltr">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-success" type="button" id="button-addon1"> <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                  <input type="search" class="form-control" placeholder="جستجو"
+                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="courses">
+
+            <ul class="list-group">
+
+
+              <li class="list-group-item course-title">
+                <div class="text-muted"><i class="fas fa-book"></i> درس ها </div>
+              </li>
+
+              <li class="list-group-item">
+                <a class="firstlistitem" data-toggle="collapse" href=".term98-99-2" role="button" aria-expanded="true"
+                  aria-controls="term98-99-2">
+                  <i class="fas fa-angle-down"></i> ترم دو سال تحصیلی 98-99
+                </a>
+              </li>
+
+              <li class="list-group-item collapse show term98-99-2"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
+              <li class="list-group-item collapse show term98-99-2"> <a href="course.html">آزمایشگاه برنامه نویسی
+                  پیشرفته</a></li>
+              <li class="list-group-item collapse show term98-99-2"> <a href="course.html">مبانی رایانش امن</a></li>
+              <li class="list-group-item collapse show term98-99-2"> <a href="course.html">توسعه امن نرم افزار</a></li>
+
+
+              <li class="list-group-item">
+                <a class="firstlistitem" data-toggle="collapse" href=".term98-99-1" role="button" aria-expanded="false"
+                  aria-controls="term98-99-1">
+                  <i class="fas fa-angle-down"></i> ترم یک سال تحصیلی 98-99
+                </a>
+              </li>
+
+              <li class="list-group-item collapse term98-99-1"> <a href="course.html">طراحی کامپایلر</a></li>
+              <li class="list-group-item collapse term98-99-1"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
+
+              <li class="list-group-item">
+                <a class="firstlistitem" data-toggle="collapse" href=".term97-98-2" role="button" aria-expanded="false"
+                  aria-controls="term97-98-2">
+                  <i class="fas fa-angle-down"></i> ترم دو سال تحصیلی 97-98
+                </a>
+              </li>
+
+              <li class="list-group-item collapse term97-98-2"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
+              <li class="list-group-item collapse term97-98-2"> <a href="course.html">طراحی کامپایلر</a></li>
+              <li class="list-group-item collapse term97-98-2"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-12 bottomnav">
+    <div class="jumbotron">
+      <!--  <img src="{% static 'iut2.png' %}" alt="picture can not found"> -->
+      <hr class="my-4">
+      <p> راه اندازی شده توسط دانشگاه صنعتی اصفهان</p>
+      <p> دانشکده مهندسی برق و کامپیوتر </p>
+    </div>
+  </div>
+
+  <script src="{% static 'stupage.js' %}"></script>
+</body>
+
+</html>

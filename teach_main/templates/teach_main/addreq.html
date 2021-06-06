@@ -1,291 +1,311 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GETTING STARTED WITH BRACKETS</title>
-        <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="main.css" type="text/css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-                     
-        <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
-        
-        <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GETTING STARTED WITH BRACKETS</title>
+  <meta name="description" content="An interactive getting started guide for Brackets.">
+  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
+
+  <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        
-        <script src="https://kit.fontawesome.com/9f3cb03f5d.js"></script>
-        
-        <link rel="stylesheet" href="{% static 'addreq.css' %}"> 
-        <link rel="stylesheet" href="{% static 'leftsidebar.css' %}"> 
-    </head>
-    <body>
-        
-    <div class="fixed-top">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+
+  <script src="https://kit.fontawesome.com/9f3cb03f5d.js"></script>
+
+  <link rel="stylesheet" href="{% static 'addreq.css' %}">
+  <link rel="stylesheet" href="{% static 'leftsidebar.css' %}">
+</head>
+
+<body>
+
+  <div class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark">
-        
+
       <h2 class="navbar-brand" href="#">سامانه انتخاب دستیار آموزشی <i class="fas fa-chalkboard-teacher"></i></h2>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent" style="direction: rtl;">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="profpage.html"> <i class="fas fa-bars"></i> درخواست ها <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="profpage.html"> <i class="fas fa-bars"></i> درخواست ها <span
+                class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="addreq.html"> <i class="fas fa-plus"></i> افزودن درخواست </a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="messages.html"> <i class="fas fa-comment"></i> پیام ها </a>
-          </li>             
+          </li>
         </ul>
       </div>
-        
+
     </nav>
-    </div>
-        
-    <div class="container-fluid allpage">
-        <div class="row flex-xl-nowrap">
-<!--        <div class="col-xl-2 col-lg-1"></div>-->
- 
-        <main class="col-xl-8 pr-xl-5 py-md-8 bd-content nofixed" role="main">             
+  </div>
+
+  <div class="container-fluid allpage">
+    <div class="row flex-xl-nowrap">
+      <!--        <div class="col-xl-2 col-lg-1"></div>-->
+
+      <main class="col-xl-8 pr-xl-5 py-md-8 bd-content nofixed" role="main">
         <div class="my_requests">
-            
-            <div class="card border-secondry" style="margin-top: 2.8em;">
-                <div class="card-header bg-white" id="main-header">
-                    <h4><i class="fas fa-plus"></i><i class="fas fa-chalkboard-teacher"></i> </h4>
-                    <h4> افزودن درخواست  </h4> 
-                    <p> هم اکنون درخواست خود را برای جستجوی دستیار آموزشی ثبت کنید </p>
-                </div>
 
-             <div class="card-body bg-light">
+          <div class="card border-secondry" style="margin-top: 2.8em;">
+            <div class="card-header bg-white" id="main-header">
+              <h4><i class="fas fa-plus"></i><i class="fas fa-chalkboard-teacher"></i> </h4>
+              <h4> افزودن درخواست </h4>
+              <p> هم اکنون درخواست خود را برای جستجوی دستیار آموزشی ثبت کنید </p>
+            </div>
 
-                <div class="container">   
-                    {% if success %}
-                    <p class="alert alert-success">استاد گرامی درخواست با موفقیت ثبت شد </p>
-                    {% endif %}
-                    <form method="POST">{% csrf_token %}
-                      
-                      <table class="table" id="form-table">
-                         <tr>
-                             <td>
+            <div class="card-body bg-light">
 
-                                  <div class="form-group mt-4">
-                                    <label for="CourseName"> نام درس </label>
-                                    <input type="text" class="form-control" name="CourseName" id="CourseName" placeholder="نام درسی که نیازمند دستیار آموزشی است را بنویسید ..." required>
-                                  </div>
-                             </td>
-                             
-                         </tr>
-                         <tr>
-                             <td>
-                                  <div class="form-group">
-                                      <label for="validationTextarea">توضیحات</label>
-                                      <textarea class="form-control" name="validationTextarea" id="validationTextarea" rows="3"  placeholder="توضیحات لازم خود را بنویسید ..." required></textarea>
-                                      <div class=" text-right text-dark" dir="rtl">
-                                        <small>توضیحات و شرایط لازم برای دستیار آموزشی خود را در باکس بالا بنویسید. دقت نمایید دانشجویان براساس توضیحات شما اقدام به ارسال پاسخ می نمایند.</small>
-                                      </div>
-                                  </div>
-                                 
-                             </td>
-                             
-                         </tr>
-                         <tr>
-                             <td>
-                                        
-                                 <h5 class="mt-4">  مقطع تحصیلی دستیار آموزشی</h5>
-                                 <hr class="mb-4">
-                                      <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="customControlAutosizing" id="customControlAutosizing">
-                                        <label class="custom-control-label" for="customControlAutosizing">دانشجو ارشد</label>
-                                      </div>
-                                      <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="customControlAutosizing1" id="customControlAutosizing1">
-                                        <label class="custom-control-label" for="customControlAutosizing1">دانشجو کارشناسی</label>
-                                      </div>
-                                      <small> لطفا مقطع تحصیلی دستیار آموزشی را مشخص کنید.</small>
-                                    
-                             </td>
-                             
-                         </tr>                          
+              <div class="container">
+                {% if success %}
+                <p class="alert alert-success">استاد گرامی درخواست با موفقیت ثبت شد </p>
+                {% endif %}
+                <form method="POST">{% csrf_token %}
 
+                  <table class="table" id="form-table">
+                    <tr>
+                      <td>
 
-                         <tr>
-                             <td>
-                                 <h5 class="mt-5"> ساعات حضور دستیار آموزشی </h5>
-                                 <hr class="mb-3">
-                                    <div class="custom-control custom-radio custom-control-inline TimeSelectionType">
-                                      <input type="radio" id="inlineRadio2" name="customRadioInline1" class="custom-control-input" checked>
-                                      <label class="custom-control-label" for="inlineRadio2">ورود دستی ساعت</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline TimeSelectionType">
-                                      <input type="radio" id="inlineRadio1" name="customRadioInline1" class="custom-control-input">
-                                      <label class="custom-control-label"   for="inlineRadio1">ساعت بندی خودکار</label>
-                                    </div>
-                                    
-                             </td>
-                             
-                         </tr>
-                         <tr>
-                             <td>
-                                
-                                  <div class="timebox row">
-                                      <div class="form-group form-check-inline">
-                                          <label class="form-check-label" for="Time1"> از ساعت </label>
-                                          <input  class="form-control" type="time" id="Time1">
-                                      </div>  
-                                      <div class="form-group form-check-inline">
-                                          <label class="form-check-label" for="Time2"> تا ساعت </label>
-                                          <input  class="form-control" type="time" id="Time2">
-                                      </div>
-                                      <br>
-                                      <div class="form-group form-check-inline">
-                                          <label class="form-check-label" for="Day"> روز </label>
+                        <div class="form-group mt-4">
+                          <label for="CourseName"> نام درس </label>
+                          <input type="text" class="form-control" name="CourseName" id="CourseName"
+                            placeholder="نام درسی که نیازمند دستیار آموزشی است را بنویسید ..." required>
+                        </div>
+                      </td>
 
-                                                <select class="form-control" id="Day">
-                                                <option value="sat"> شنبه </option>
-                                                <option value="sun"> یکشنبه </option>
-                                                <option value="mon"> دوشنبه </option>
-                                                <option value="tu"> سه شنبه </option>
-                                                <option value="wed"> چهارشنبه </option>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-group">
+                          <label for="validationTextarea">توضیحات</label>
+                          <textarea class="form-control" name="validationTextarea" id="validationTextarea" rows="3"
+                            placeholder="توضیحات لازم خود را بنویسید ..." required></textarea>
+                          <div class=" text-right text-dark" dir="rtl">
+                            <small>توضیحات و شرایط لازم برای دستیار آموزشی خود را در باکس بالا بنویسید. دقت نمایید
+                              دانشجویان براساس توضیحات شما اقدام به ارسال پاسخ می نمایند.</small>
+                          </div>
+                        </div>
 
-                                          </select>
+                      </td>
 
-                                      </div>
+                    </tr>
+                    <tr>
+                      <td>
+
+                        <h5 class="mt-4"> مقطع تحصیلی دستیار آموزشی</h5>
+                        <hr class="mb-4">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" name="customControlAutosizing"
+                            id="customControlAutosizing">
+                          <label class="custom-control-label" for="customControlAutosizing">دانشجو ارشد</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" name="customControlAutosizing1"
+                            id="customControlAutosizing1">
+                          <label class="custom-control-label" for="customControlAutosizing1">دانشجو کارشناسی</label>
+                        </div>
+                        <small> لطفا مقطع تحصیلی دستیار آموزشی را مشخص کنید.</small>
+
+                      </td>
+
+                    </tr>
 
 
-                                      <div class="form-group form-check-inline" id="division-time">
-                                          <label class="form-check-label" for="duration">تقسیم بر بازه های زمانی </label>
-                                          <input  class="form-control" type="text" id="duration">
-                                          <label class="form-check-label" for="duration" > دقیقه ای </label>
+                    <tr>
+                      <td>
+                        <h5 class="mt-5"> ساعات حضور دستیار آموزشی </h5>
+                        <hr class="mb-3">
+                        <div class="custom-control custom-radio custom-control-inline TimeSelectionType">
+                          <input type="radio" id="inlineRadio2" name="customRadioInline1" class="custom-control-input"
+                            checked>
+                          <label class="custom-control-label" for="inlineRadio2">ورود دستی ساعت</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline TimeSelectionType">
+                          <input type="radio" id="inlineRadio1" name="customRadioInline1" class="custom-control-input">
+                          <label class="custom-control-label" for="inlineRadio1">ساعت بندی خودکار</label>
+                        </div>
 
-                                      </div>
-                                      <div class="form-group form-check-inline">
-                                          <i class="fas fa-plus btn btn-outline-primary " style="padding: 0.6em;" id="add-btn"></i>
-                        
-                                          </div>
-                                      
+                      </td>
 
-                                  </div>
-                                              
-                             </td>
-                         </tr> 
+                    </tr>
+                    <tr>
+                      <td>
+
+                        <div class="timebox row">
+                          <div class="form-group form-check-inline">
+                            <label class="form-check-label" for="Time1"> از ساعت </label>
+                            <input class="form-control" type="time" id="Time1">
+                          </div>
+                          <div class="form-group form-check-inline">
+                            <label class="form-check-label" for="Time2"> تا ساعت </label>
+                            <input class="form-control" type="time" id="Time2">
+                          </div>
+                          <br>
+                          <div class="form-group form-check-inline">
+                            <label class="form-check-label" for="Day"> روز </label>
+
+                            <select class="form-control" id="Day">
+                              <option value="sat"> شنبه </option>
+                              <option value="sun"> یکشنبه </option>
+                              <option value="mon"> دوشنبه </option>
+                              <option value="tu"> سه شنبه </option>
+                              <option value="wed"> چهارشنبه </option>
+
+                            </select>
+
+                          </div>
 
 
+                          <div class="form-group form-check-inline" id="division-time">
+                            <label class="form-check-label" for="duration">تقسیم بر بازه های زمانی </label>
+                            <input class="form-control" type="text" id="duration">
+                            <label class="form-check-label" for="duration"> دقیقه ای </label>
+
+                          </div>
+                          <div class="form-group form-check-inline">
+                            <i class="fas fa-plus btn btn-outline-primary " style="padding: 0.6em;" id="add-btn"></i>
+
+                          </div>
+
+
+                        </div>
+
+                      </td>
+                    </tr>
+
+
+                  </table>
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                    style="text-align: right; display: none;" id="time-error">
+                    <strong>استاد گرامی!</strong> زمان وارد شده توسط شما معتبر نمی باشد
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin: 0;">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div id="time-table">
+                    <table class="table">
+                      <tbody id="time">
+                      </tbody>
                     </table>
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="text-align: right; display: none;" id="time-error">
-                          <strong>استاد گرامی!</strong> زمان وارد شده توسط شما معتبر نمی باشد
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin: 0;">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                      <div id="time-table">
-                          <table class="table">
-                              <tbody id = "time">
-                              </tbody>
-                          </table>
-                      </div>
-<!--                      <hr class="mb-0 mt-5 bg-primary">    -->
-                      <div class="form-check-inline" style="float: right; margin-top: 2em;">
-                        {% csrf_token %}
-                      <button type="submit" class="btn btn-primary btn-md"> ثبت درخواست </button>    
-                      <button type="reset" class="btn btn-primary btn-md"> پاک کردن </button>
-                      </div>
-                    </form>
-                </div>
-              </div> 
+                  </div>
+                  <!--                      <hr class="mb-0 mt-5 bg-primary">    -->
+                  <div class="form-check-inline" style="float: right; margin-top: 2em;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-md"> ثبت درخواست </button>
+                    <button type="reset" class="btn btn-primary btn-md"> پاک کردن </button>
+                  </div>
+                </form>
+              </div>
             </div>
+          </div>
+        </div>
+
+
+      </main>
+      <div class="col-xl-4 pl-xl-5 " id="last-requests">
+        <div class="card border-white">
+          <!--                 style="padding: 5.5em 0 5em 0;"-->
+          <div class="card-header bg-white" style=" padding-bottom: 0; border-bottom: 2px solid #390099;">
+            <h5 class="text-right"> درخواست های اخیر شما</h5>
+
+          </div>
+          <div class="card-body" style="padding: 1em 0 0 0;">
+            <div class="row">
+              <div class="col-xl-12 col-lg-6 col-md-6">
+                <div class="card" style="max-width: 60rem;">
+                  <div class="card-body">
+                    <h5 class="card-title"> مبانی رایانش امن </h5>
+                    <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام
+                      دهند. </p>
+                    <hr>
+                    <small class="card-subtitle mt-2 text-muted" style="float: right;">10روز پیش</small>
+                    <button href="#" class="btn btn-danger">حذف</button>
+                    <button href="#" class="btn btn-primary">ویرایش</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-6 col-md-6">
+                <div class="card" style="max-width: 60rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">آزمایشگاه - برنامه نویسی پیشرفته </h5>
+                    <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام
+                      دهند. </p>
+                    <hr>
+                    <small class="card-subtitle mt-2 text-muted" style="float: right;">10روز پیش</small>
+                    <button href="#" class="btn btn-danger">حذف</button>
+                    <button href="#" class="btn btn-primary">ویرایش</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-xl-12 col-lg-6 col-md-6">
+                <div class="card" style="max-width: 60rem;">
+                  <div class="card-body">
+                    <h5 class="card-title"> مبانی رایانش امن </h5>
+                    <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام
+                      دهند. </p>
+                    <hr>
+                    <small class="card-subtitle mt-2 text-muted" style="float: right;">10روز پیش</small>
+                    <button href="#" class="btn btn-danger">حذف</button>
+                    <button href="#" class="btn btn-primary">ویرایش</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-12 col-lg-6 col-md-6">
+                <div class="card" style="max-width: 60rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">آزمایشگاه - برنامه نویسی پیشرفته </h5>
+                    <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام
+                      دهند. </p>
+                    <hr>
+                    <small class="card-subtitle mt-2 text-muted" style="float: right;">10روز پیش</small>
+                    <button href="#" class="btn btn-danger">حذف</button>
+                    <button href="#" class="btn btn-primary">ویرایش</button>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
-            
-        </main>
-        <div class="col-xl-4 pl-xl-5 " id="last-requests">
-            <div class="card border-white">
-<!--                 style="padding: 5.5em 0 5em 0;"-->
-            <div class="card-header bg-white" style=" padding-bottom: 0; border-bottom: 2px solid #390099;">
-                    <h5 class="text-right">  درخواست های اخیر شما</h5> 
-                    
-            </div>    
-            <div class="card-body" style="padding: 1em 0 0 0;">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-6 col-md-6">
-                        <div class="card" style="max-width: 60rem;">
-                          <div class="card-body">
-                            <h5 class="card-title"> مبانی رایانش امن </h5>  
-                            <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p> 
-                            <hr>  
-                            <small class="card-subtitle mt-2 text-muted" style="float: right;">10روز پیش</small>  
-                            <button href="#" class="btn btn-danger">حذف</button>
-                            <button href="#" class="btn btn-primary">ویرایش</button>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-12 col-lg-6 col-md-6">
-                        <div class="card" style="max-width: 60rem;">
-                          <div class="card-body">
-                            <h5 class="card-title">آزمایشگاه - برنامه نویسی پیشرفته </h5>
-                            <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p> 
-                            <hr>                  
-                            <small class="card-subtitle mt-2 text-muted" style="float: right;">10روز پیش</small>  
-                            <button href="#" class="btn btn-danger">حذف</button>
-                            <button href="#" class="btn btn-primary">ویرایش</button>
-                          </div>
-                        </div>
-                    </div>    
-                    
-                </div>
-                <div class="row">
-                    <div class="col-xl-12 col-lg-6 col-md-6">
-                        <div class="card" style="max-width: 60rem;">
-                          <div class="card-body">
-                            <h5 class="card-title"> مبانی رایانش امن </h5>
-                            <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p> 
-                            <hr>  
-                            <small class="card-subtitle mt-2 text-muted" style="float: right;">10روز پیش</small>  
-                            <button href="#" class="btn btn-danger">حذف</button>
-                            <button href="#" class="btn btn-primary">ویرایش</button>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-12 col-lg-6 col-md-6">
-                        <div class="card" style="max-width: 60rem;">
-                          <div class="card-body">
-                            <h5 class="card-title">آزمایشگاه - برنامه نویسی پیشرفته </h5>
-                            <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p> 
-                            <hr>                  
-                            <small class="card-subtitle mt-2 text-muted" style="float: right;">10روز پیش</small>  
-                            <button href="#" class="btn btn-danger">حذف</button>
-                            <button href="#" class="btn btn-primary">ویرایش</button>
-                          </div>
-                        </div>
-                    </div>    
-                    
-                </div>                
-                
 
 
-                
-            </div>  
-            </div>    
-        </div>    
+
+          </div>
         </div>
-        </div>
-        
-        <div class="col-xl-12 bottomnav">
-        <div class="jumbotron">
-          <img src="{% static 'iut2.png' %}" alt="picture can not found">
-          <hr class="my-4">
-          <p> راه اندازی شده توسط دانشگاه صنعتی اصفهان</p>
-          <p> دانشکده مهندسی برق و کامپیوتر </p>
-        </div>
-        </div>
-        
-    <script src="{% static 'addreq.js' %}"></script>
-        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-12 bottomnav">
+    <div class="jumbotron">
+      <img src="{% static 'iut2.png' %}" alt="picture can not found">
+      <hr class="my-4">
+      <p> راه اندازی شده توسط دانشگاه صنعتی اصفهان</p>
+      <p> دانشکده مهندسی برق و کامپیوتر </p>
+    </div>
+  </div>
+
+  <script src="{% static 'addreq.js' %}"></script>
+
 </body>
+
 </html>

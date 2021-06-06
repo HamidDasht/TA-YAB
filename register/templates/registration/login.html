@@ -2,240 +2,278 @@
 
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>TA YAB</title>
-        <meta name="description" content="An interactive getting started guide for Brackets.">
-        <link rel="stylesheet" href="{% static 'main.css' %}" type="text/css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        
-      
-        <script src="https://kit.fontawesome.com/9f3cb03f5d.js"></script>
-        <link rel="stylesheet" href="{% static 'sara.css' %}">
-        <link rel="stylesheet" href="{% static 'leftsidebar.css' %}">
-        
-        
-    </head>
-    <body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TA YAB</title>
+  <meta name="description" content="An interactive getting started guide for Brackets.">
+  <link rel="stylesheet" href="{% static 'main.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <div class="fixed-top">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+
+
+  <script src="https://kit.fontawesome.com/9f3cb03f5d.js"></script>
+  <link rel="stylesheet" href="{% static 'sara.css' %}">
+  <link rel="stylesheet" href="{% static 'leftsidebar.css' %}">
+
+
+</head>
+
+<body>
+
+  <div class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark">
-        
+
       <h2 class="navbar-brand" href="#">سامانه انتخاب دستیار آموزشی <i class="fas fa-chalkboard-teacher"></i></h2>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent" style="direction: rtl;">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
-            <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-            </svg> خانه </a>
+            <a class="nav-link" href="#"> <svg width="1em" height="1em" viewBox="0 0 16 16"
+                class="bi bi-house-door-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z" />
+                <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+              </svg> خانه </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
-            </svg> درباره ما  </a>
+            <a class="nav-link" href="#"> <svg width="1em" height="1em" viewBox="0 0 16 16"
+                class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+              </svg> درباره ما </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.57 6.033H5.25C5.22 4.147 6.68 3.5 8.006 3.5c1.397 0 2.673.73 2.673 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.355H7.117l-.007-.463c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.901 0-1.358.603-1.358 1.384zm1.251 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z"/>
-            </svg> راهنمای استفاده از سایت </a>
-          </li>             
+            <a class="nav-link" href="#"> <svg width="1em" height="1em" viewBox="0 0 16 16"
+                class="bi bi-question-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.57 6.033H5.25C5.22 4.147 6.68 3.5 8.006 3.5c1.397 0 2.673.73 2.673 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.355H7.117l-.007-.463c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.901 0-1.358.603-1.358 1.384zm1.251 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z" />
+              </svg> راهنمای استفاده از سایت </a>
+          </li>
         </ul>
       </div>
-        
+
     </nav>
-    </div>        
-        
-        
-        
-    <div class="container-fluid allpage">
+  </div>
+
+
+
+  <div class="container-fluid allpage">
     <div class="row flex-xl-nowrap">
-        <div id="MyLogin" class="card border-white col-md-4 col-xl-4 mr-xl-4 pr-lg-0 pr-md-3 pr-sm-3 pl-sm-3 ml-xl-3 ml-md-0 ml-sm-0 mr-sm-0 bd-sidebar" style="padding: 0; margin-top: 1em;">
-           <h5 class="card-header bg-white" style="box-shadow: 0px 7px 7px -5px #ddd;    border-bottom: 2px solid #390099;"> هم اکنون وارد شوید </h5>
+      <div id="MyLogin"
+        class="card border-white col-md-4 col-xl-4 mr-xl-4 pr-lg-0 pr-md-3 pr-sm-3 pl-sm-3 ml-xl-3 ml-md-0 ml-sm-0 mr-sm-0 bd-sidebar"
+        style="padding: 0; margin-top: 1em;">
+        <h5 class="card-header bg-white"
+          style="box-shadow: 0px 7px 7px -5px #ddd;    border-bottom: 2px solid #390099;"> هم اکنون وارد شوید </h5>
 
-            <div class="loginbox">
-            <form method="POST" action=""> 
-              
-              {% csrf_token %}
-   
-              <div class="form-group">  
-                <h1> ورود به سامانه </h1>
-                <label for="exampleInputEmail1">شماره دانشجویی / پرسنلی </label><i class="fas fa-address-card"></i>
-                <input maxlength="20" type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <!--<small id="loginError" class="form-text"> اطلاعات وارد شده صحیح نمی باشد . </small>--> 
-              </div>
+        <div class="loginbox">
+          <form method="POST" action="">
 
-              <div class="form-group">
-                <label for="exampleInputPassword1">کلمه عبور </label><i class="fas fa-lock"></i>
-                <input maxlength="20" type="password" name="password" class="form-control" id="exampleInputPassword1">
-              </div>
+            {% csrf_token %}
 
-              <div class="form-group">
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                    <label class="custom-control-label" for="customControlAutosizing">مرا به خاطر نسپار</label>
-                  </div>
-              </div>    
-                
-              <button type="submit" class="btn btn-primary btn-lg"> ورود </button>
-                <p class="text-center">
-                    <a href="#" class="card-link mb-5"> ورود از طریق سامانه احراز هویت امین </a>
-                </p>    
-            </form>
+            <div class="form-group">
+              <h1> ورود به سامانه </h1>
+              <label for="exampleInputEmail1">شماره دانشجویی / پرسنلی </label><i class="fas fa-address-card"></i>
+              <input maxlength="20" type="text" name="username" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+              <!--<small id="loginError" class="form-text"> اطلاعات وارد شده صحیح نمی باشد . </small>-->
             </div>
-            
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">کلمه عبور </label><i class="fas fa-lock"></i>
+              <input maxlength="20" type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                <label class="custom-control-label" for="customControlAutosizing">مرا به خاطر نسپار</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg"> ورود </button>
+            <p class="text-center">
+              <a href="#" class="card-link mb-5"> ورود از طریق سامانه احراز هویت امین </a>
+            </p>
+          </form>
         </div>
-        
-    <main class="col-md-8 col-xl-8 py-md-3 pl-xl-5 pl-lg-0 pr-md-3 pr-sm-3 pr-xl-4 bd-content nofixed " role="main">
+
+      </div>
+
+      <main class="col-md-8 col-xl-8 py-md-3 pl-xl-5 pl-lg-0 pr-md-3 pr-sm-3 pr-xl-4 bd-content nofixed " role="main">
         <div class="requests">
-            <div class="card border-white ml-xl-3">
-              <h5 class="card-header bg-white" style="box-shadow: 0px 7px 7px -5px #ddd;    border-bottom: 2px solid #390099;"> آخرین درخواست ها</h5>
-              <div class="card-body " style="padding: 1em 0.5em 1em 0.5em"> 
+          <div class="card border-white ml-xl-3">
+            <h5 class="card-header bg-white"
+              style="box-shadow: 0px 7px 7px -5px #ddd;    border-bottom: 2px solid #390099;"> آخرین درخواست ها</h5>
+            <div class="card-body " style="padding: 1em 0.5em 1em 0.5em">
 
-                    <div class="row">
-                        <div class="col-lg-4  col-md-12 col-sm-12">
+              <div class="row">
+                <div class="col-lg-4  col-md-12 col-sm-12">
 
-                            <div class="card border-info" style="max-width: 60rem;">
-                              <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}" alt="..."> استاد مریم موزرانی  </div>
-                              <div class="card-body text-dark">
+                  <div class="card border-info" style="max-width: 60rem;">
+                    <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"
+                        alt="..."> استاد مریم موزرانی </div>
+                    <div class="card-body text-dark">
 
-                                <p><small class="text-muted"> 3 روز پیش </small></p>
-                                <h5 class="card-title"> مبانی رایانش امن </h5>
-                                <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                              </div>
-                            </div> 
-
-                        </div>
-                        <div class="col-lg-4  col-md-12 col-sm-12">
-
-                             <div class="card border-info" style="max-width: 60rem;">
-                              <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}" alt="..."> استاد مریم موزرانی  </div>
-                              <div class="card-body text-dark">
-
-                                <p><small class="text-muted"> 3 روز پیش </small></p>
-                                <h5 class="card-title"> مبانی رایانش امن </h5>
-                                <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                              </div>
-                            </div> 
-
-                        </div>
-                        <div class="col-lg-4  col-md-12 col-sm-12">
-
-                            <div class="card border-info" style="max-width: 60rem;">
-                              <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}" alt="..."> استاد مریم موزرانی  </div>
-                              <div class="card-body text-dark">
-
-                                <p><small class="text-muted"> 3 روز پیش </small></p>
-                                <h5 class="card-title"> مبانی رایانش امن </h5>
-                                <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                              </div>
-                            </div> 
-
-                        </div>
+                      <p><small class="text-muted"> 3 روز پیش </small></p>
+                      <h5 class="card-title"> مبانی رایانش امن </h5>
+                      <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری
+                        پیام دهند. </p>
                     </div>
-                         <div class="row">
-                        <div class="col-lg-4  col-md-12 col-sm-12">
-
-                            <div class="card border-info" style="max-width: 60rem;">
-                              <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}" alt="..."> استاد مریم موزرانی  </div>
-                              <div class="card-body text-dark">
-
-                                <p><small class="text-muted"> 3 روز پیش </small></p>
-                                <h5 class="card-title"> مبانی رایانش امن </h5>
-                                <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                              </div>
-                            </div> 
-
-                        </div>
-                        <div class="col-lg-4  col-md-12 col-sm-12">
-
-                             <div class="card border-info" style="max-width: 60rem;">
-                              <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"alt="..."> استاد مریم موزرانی  </div>
-                              <div class="card-body text-dark">
-
-                                <p><small class="text-muted"> 3 روز پیش </small></p>
-                                <h5 class="card-title"> مبانی رایانش امن </h5>
-                                <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                              </div>
-                            </div> 
-
-                        </div>
-                        <div class="col-lg-4  col-md-12 col-sm-12">
-
-                            <div class="card border-info" style="max-width: 60rem;">
-                              <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}" alt="..."> استاد مریم موزرانی  </div>
-                              <div class="card-body text-dark">
-
-                                <p><small class="text-muted"> 3 روز پیش </small></p>
-                                <h5 class="card-title"> مبانی رایانش امن </h5>
-                                <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                              </div>
-                            </div> 
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-4  col-md-12 col-sm-12">
-
-                            <div class="card border-info" style="max-width: 60rem;">
-                              <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"alt="..."> استاد مریم موزرانی  </div>
-                              <div class="card-body text-dark">
-
-                                <p><small class="text-muted"> 3 روز پیش </small></p>
-                                <h5 class="card-title"> مبانی رایانش امن </h5>
-                                <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                              </div>
-                            </div> 
-
-                        </div>
-                        <div class="col-lg-4  col-md-12 col-sm-12">
-
-                            <div class="card border-info" style="max-width: 60rem;">
-                              <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}" alt="..."> استاد مریم موزرانی  </div>
-                              <div class="card-body text-dark">
-
-                                <p><small class="text-muted"> 3 روز پیش </small></p>
-                                <h5 class="card-title"> مبانی رایانش امن </h5>
-                                <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                              </div>
-                            </div> 
-
-                        </div>
-                        <div class="col-lg-4  col-md-12 col-sm-12">
-
-                            <div class="card border-info" style="max-width: 60rem;">
-                              <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}" alt="..."> استاد مریم موزرانی  </div>
-                              <div class="card-body text-dark">
-
-                                <p><small class="text-muted"> 3 روز پیش </small></p>
-                                <h5 class="card-title"> مبانی رایانش امن </h5>
-                                <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
-                              </div>
-                            </div> 
-
-                        </div>
-                    </div>
+                  </div>
 
                 </div>
+                <div class="col-lg-4  col-md-12 col-sm-12">
 
+                  <div class="card border-info" style="max-width: 60rem;">
+                    <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"
+                        alt="..."> استاد مریم موزرانی </div>
+                    <div class="card-body text-dark">
+
+                      <p><small class="text-muted"> 3 روز پیش </small></p>
+                      <h5 class="card-title"> مبانی رایانش امن </h5>
+                      <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری
+                        پیام دهند. </p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-4  col-md-12 col-sm-12">
+
+                  <div class="card border-info" style="max-width: 60rem;">
+                    <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"
+                        alt="..."> استاد مریم موزرانی </div>
+                    <div class="card-body text-dark">
+
+                      <p><small class="text-muted"> 3 روز پیش </small></p>
+                      <h5 class="card-title"> مبانی رایانش امن </h5>
+                      <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری
+                        پیام دهند. </p>
+                    </div>
+                  </div>
+
+                </div>
               </div>
+              <div class="row">
+                <div class="col-lg-4  col-md-12 col-sm-12">
+
+                  <div class="card border-info" style="max-width: 60rem;">
+                    <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"
+                        alt="..."> استاد مریم موزرانی </div>
+                    <div class="card-body text-dark">
+
+                      <p><small class="text-muted"> 3 روز پیش </small></p>
+                      <h5 class="card-title"> مبانی رایانش امن </h5>
+                      <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری
+                        پیام دهند. </p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-4  col-md-12 col-sm-12">
+
+                  <div class="card border-info" style="max-width: 60rem;">
+                    <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"
+                        alt="..."> استاد مریم موزرانی </div>
+                    <div class="card-body text-dark">
+
+                      <p><small class="text-muted"> 3 روز پیش </small></p>
+                      <h5 class="card-title"> مبانی رایانش امن </h5>
+                      <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری
+                        پیام دهند. </p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-4  col-md-12 col-sm-12">
+
+                  <div class="card border-info" style="max-width: 60rem;">
+                    <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"
+                        alt="..."> استاد مریم موزرانی </div>
+                    <div class="card-body text-dark">
+
+                      <p><small class="text-muted"> 3 روز پیش </small></p>
+                      <h5 class="card-title"> مبانی رایانش امن </h5>
+                      <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری
+                        پیام دهند. </p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4  col-md-12 col-sm-12">
+
+                  <div class="card border-info" style="max-width: 60rem;">
+                    <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"
+                        alt="..."> استاد مریم موزرانی </div>
+                    <div class="card-body text-dark">
+
+                      <p><small class="text-muted"> 3 روز پیش </small></p>
+                      <h5 class="card-title"> مبانی رایانش امن </h5>
+                      <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری
+                        پیام دهند. </p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-4  col-md-12 col-sm-12">
+
+                  <div class="card border-info" style="max-width: 60rem;">
+                    <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"
+                        alt="..."> استاد مریم موزرانی </div>
+                    <div class="card-body text-dark">
+
+                      <p><small class="text-muted"> 3 روز پیش </small></p>
+                      <h5 class="card-title"> مبانی رایانش امن </h5>
+                      <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری
+                        پیام دهند. </p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-4  col-md-12 col-sm-12">
+
+                  <div class="card border-info" style="max-width: 60rem;">
+                    <div class="card-header form-check-inline"> <img src="{% static 'images/profpic%20copy.png' %}"
+                        alt="..."> استاد مریم موزرانی </div>
+                    <div class="card-body text-dark">
+
+                      <p><small class="text-muted"> 3 روز پیش </small></p>
+                      <h5 class="card-title"> مبانی رایانش امن </h5>
+                      <p class="card-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری
+                        پیام دهند. </p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
-    </main>
+
+          </div>
+        </div>
+      </main>
     </div>
-    </div>
-      
-<!--
+  </div>
+
+  <!--
     <div class="jumbotron">
       <img src="iut2.png" alt="picture can not found">
       <hr class="my-4">
@@ -243,14 +281,15 @@
       <p> دانشکده مهندسی برق و کامپیوتر </p>
     </div>
 -->
-        <div class="col-xl-12 bottomnav">
-        <div class="jumbotron">
-          <img src="{% static 'images/iut2.png' %}"" alt="picture can not found">
-          <hr class="my-4">
-          <p> راه اندازی شده توسط دانشگاه صنعتی اصفهان</p>
-          <p> دانشکده مهندسی برق و کامپیوتر </p>
-        </div>
-        </div>
-        
+  <div class="col-xl-12 bottomnav">
+    <div class="jumbotron">
+      <img src="{% static 'images/iut2.png' %}"" alt=" picture can not found">
+      <hr class="my-4">
+      <p> راه اندازی شده توسط دانشگاه صنعتی اصفهان</p>
+      <p> دانشکده مهندسی برق و کامپیوتر </p>
+    </div>
+  </div>
+
 </body>
+
 </html>
