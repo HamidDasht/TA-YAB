@@ -117,13 +117,12 @@ input[type="search"]{
     border-radius: 5px;
     
 }
-
-.nav-h5{
+.navbar .nav-h5{
     color: white;
     
 }
 
-.navbar img{
+.navbar .nav-h5 img{
     width: 2em;
     
 }
