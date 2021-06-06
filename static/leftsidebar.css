@@ -1,7 +1,9 @@
 body{
     font-family: Sahel, Tahoma, Helvetica, sans-serif;
 }
-
+.leftside{
+    visibility: hidden;
+}
 
 .rightside img{
     
@@ -115,11 +117,16 @@ input[type="search"]{
     border-radius: 5px;
     
 }
-.navbar .navbar-brand{
-    margin-left: 1em;
+
+.nav-h5{
+    color: white;
+    
 }
 
-
+.navbar img{
+    width: 2em;
+    
+}
 .bottomnav{
     float: left;
     padding: 0;
