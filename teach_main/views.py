@@ -18,7 +18,8 @@ def index(request):
     if profile.type != TEACHER:
         return redirect('../std')
         return HttpResponse("<h1>شما اجازه ی ورود به این صفحه را نداریم</h1>")
-    return render(request, 'teach_main/profpage.html',  {'teacher_name': user.first_name + ' ' + user.last_name})
+    return render(request, 'teach_main/profpage.html',  {'teacher_name': user.first_name + ' ' + user.last_name,
+    'email': user.email})
 
 
 start_times = []

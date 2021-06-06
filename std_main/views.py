@@ -36,7 +36,8 @@ def index(request):
     if request.method == 'GET':
         return render(
             request, 'std_main/studentpage.html', 
-        {'requests':page , 'std_name': user.first_name + ' ' + user.last_name}
+        {'requests':page , 'std_name': user.first_name + ' ' + user.last_name, 
+        'email': user.email}
         )
 
     elif request.method == 'POST':
