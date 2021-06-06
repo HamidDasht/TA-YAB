@@ -31,14 +31,17 @@
 <body>
 
   <div class="fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-dark">
 
-      <h2 class="navbar-brand" href="#">سامانه انتخاب دستیار آموزشی <i class="fas fa-chalkboard-teacher"></i></h2>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
+      <div class="nav-h5" style="color: white;">
+        <h5>سامانه انتخاب دستیار آموزشی
+          <!-- <i class="fas fa-chalkboard-teacher"></i>  دانشگاه صنعتی اصفهان --><img src="{% static 'iut2.png' %}"
+            alt="picture can not found" style="width: 2em;"> </h5>
+      </div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent" style="direction: rtl;">
         <ul class="navbar-nav">
           <li class="nav-item active">
@@ -114,7 +117,7 @@
                         <div class="custom-control custom-checkbox">
                           <input type="checkbox" class="custom-control-input" name="customControlAutosizing"
                             id="customControlAutosizing">
-                          <label class="custom-control-label" for="customControlAutosizing">دانشجو ارشد</label>
+                          <label class="custom-control-label" for="customControlAutosizing">دانشجوی تحصیلات تکمیلی</label>
                         </div>
                         <div class="custom-control custom-checkbox">
                           <input type="checkbox" class="custom-control-input" name="customControlAutosizing1"
@@ -137,11 +140,13 @@
                             checked>
                           <label class="custom-control-label" for="inlineRadio2">ورود دستی ساعت</label>
                         </div>
+                        
                         <div class="custom-control custom-radio custom-control-inline TimeSelectionType">
+                          
                           <input type="radio" id="inlineRadio1" name="customRadioInline1" class="custom-control-input">
                           <label class="custom-control-label" for="inlineRadio1">ساعت بندی خودکار</label>
                         </div>
-
+                          
                       </td>
 
                     </tr>

@@ -39,10 +39,10 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="nav-h5">
+      <div class="nav-h5" style="color: white;">
         <h5>سامانه انتخاب دستیار آموزشی
           <!-- <i class="fas fa-chalkboard-teacher"></i>  دانشگاه صنعتی اصفهان --><img src="{% static 'iut2.png' %}"
-            alt="picture can not found"> </h5>
+            alt="picture can not found" style="width: 2em;"> </h5>
       </div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent" style="direction: rtl;">
         <ul class="navbar-nav">
@@ -53,6 +53,9 @@
           -->
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'addreq' %}"> <i class="fas fa-plus"></i> افزودن درخواست </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="../logout"> <i class="fas fa-plus"></i> خروج از سامانه </a>
           </li>
           <!--
           <li class="nav-item active">
@@ -427,7 +430,7 @@
 
 
       <div class="col-md-4 col-lg-3 col-xl-3 pl-xl-4 pr-xl-5 pr-lg-3 pr-lg-3 bd-sidebar">
-        <div class="leftside">
+        <div class="leftside" style="visibility: hidden;">
 
           <div class="card card-body searchbox">
             <form>
