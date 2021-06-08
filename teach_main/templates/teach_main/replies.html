@@ -1,0 +1,518 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="{% static 'main.css' %}" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+       
+        
+        <script src="https://kit.fontawesome.com/9f3cb03f5d.js"></script>
+        
+        <link rel="stylesheet" href="{% static 'replays.css' %}"> 
+        <link rel="stylesheet" href="{% static 'leftsidebar.css' %}"> 
+    </head>
+    <body>
+
+    <div class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        
+      <h2 class="navbar-brand" href="#">سامانه انتخاب دستیار آموزشی <i class="fas fa-chalkboard-teacher"></i></h2>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="direction: rtl;">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="profpage.html"> <i class="fas fa-bars"></i> درخواست ها <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="addreq.html"> <i class="fas fa-plus"></i> افزودن درخواست </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="messages.html"> <i class="fas fa-comment"></i> پیام ها </a>
+          </li>             
+        </ul>
+      </div>
+        
+    </nav>
+    </div>
+    <div class="container-fluid allpage">
+        <div class="row flex-xl-nowrap">
+           
+        <div class="col-lg-3 col-xl-3 pl-xl-4 pr-xl-4 pl-lg-0 bd-sidebar rightside">
+              
+            <nav class="navbar-expand-lg">
+                <div class="collapse navbar-collapse">
+                  <div class="profile">
+                    <div class="card" style="">
+                      <img class="card-img-top" src="{% static 'profpic.png' %}" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ teacher_name }}</h5>
+                        <p class="card-text">دانشکده مهندسی برق و کامپیوتر </p>
+                        <p class="card-text">گروه نرم افزار و فناوری اطلاعات </p>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">  {{ email }} :
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z"/>
+                        </svg></li>
+                        <li class="list-group-item"> Profeser : <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg></li>
+                      </ul>
+                      <div class="card-body text-right">
+                        <a href="#" class="card-link"> ویرایش اطلاعات <i class="fas fa-user-edit"></i> </a>
+                      </div>
+                    </div>  
+                   </div>
+                </div>
+            </nav>
+        </div>
+
+ 
+        <main class="col-md-8 col-lg-6 col-xl-6 py-md-3 pl-lg-0 pr-lg-3 pr-xl-4  bd-content nofixed" role="main">
+            
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" dir="ltr">
+        <div class="modal-content">
+          <div class="modal-header"> 
+            <div class="right-msg">
+              <h5 class="modal-title card-title form-check-inline"> <img src="{% static 'profpic%20copy.png' %}" alt="..."> سارا برادران قهفرخی  </h5>
+            </div>  
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>   
+          </div>
+          <div class="modal-body">
+                <div class="card border-white">
+                    <div class="card-body" id="modal-msg">  
+                       <div class="row">
+                            <div class="col-sm-12 col-sm-6">
+                              <div class="card card-body border-white right-msg">
+                                  <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> سارا برادران قهفرخی  </h5>
+                                  <div class="msg">
+                                  <p class="card-text form-check-inline"> سلام دو سه  ؟ </p>
+                                  <p class="timelabel"><small class="text-muted"><i class="far fa-clock"></i> 13:40 </small></p>
+                                  </div>
+
+                              </div>                             
+                              <div class="card card-body border-white right-msg">
+                                  <div class="msg">
+                                  <p class="card-text form-check-inline"> سلام خری ؟ </p>
+                                  <p class="timelabel"><small class="text-muted"><i class="far fa-clock"></i> 13:40 </small></p>
+                                  </div>      
+                              </div>
+                              <div class="card card-body border-white left-msg">
+                                  <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> مهدی حیدری  </h5>
+                                  <div class="msg">
+                                  <p class="card-text form-check-inline"> سلام خری ؟ </p>
+                                  <p class="timelabel"><small class="text-muted"><i class="far fa-clock"></i> 15:40 </small></p>
+                                  </div>
+
+                              </div>
+                              <h6 class="msg-date text-muted"> 2 تیر 1399 </h6>
+
+                              <div class="card card-body border-white left-msg">
+                                  <div class="msg">
+                                  <p class="card-text form-check-inline"> است یک دو سه  سلام آیا تو  یک دو سه  سلام خری؟ </p>
+                                  <p class="timelabel"><small class="text-muted"><i class="far fa-clock"></i> 16:40 </small></p>
+                                  </div>
+
+                              </div> 
+
+                              <div class="card card-body border-white left-msg">
+                                  <div class="msg">
+                                  <p class="card-text form-check-inline"> الو سلامم دیگه نمیتونم از فکرت درآم من هنوزم مث قبلنام هنو مثل نفسی براام الو سلام دیگه نمیتونم از فکرت درآم </p>
+                                  <p class="timelabel"><small class="text-muted"><i class="far fa-clock"></i> 13:40 </small></p>
+                                  </div>
+
+                              </div> 
+
+                              <h6 class="msg-date text-muted"> 3 تیر 1399 </h6>
+
+                              <div class="card card-body border-white left-msg">
+                                  <div class="msg">
+                                  <p class="card-text form-check-inline"> است یک دو سه  سلام آیا تو  یک دو سه  سلام خری ؟ </p>
+                                  <p class="timelabel"><small class="text-muted"><i class="far fa-clock"></i> 16:40 </small></p>
+                                  </div>
+
+                              </div> 
+
+                              <div class="card card-body border-white right-msg">
+                                  <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> سارا برادران قهفرخی  </h5>
+                                  <div class="msg">
+                                  <p class="card-text form-check-inline"> سلام حال شما چطور است یک دو سه  سلام آیا تو سلام حال شما چطور است یک دو سه  سلام آیا تو  یک دو سه  سلام خری ؟ </p>
+                                  <p class="timelabel"><small class="text-muted"><i class="far fa-clock"></i> 13:40 </small></p>
+                                  </div>
+
+                              </div>  
+                            </div>
+                        </div>
+                    </div>
+
+                </div>        
+          </div>
+          <div class="modal-footer">
+                <form>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-primary" type="button" id="button-addon1"> <i class="fas fa-paper-plane"></i> </button>
+                      </div>
+                      <textarea type="text" class="form-control" placeholder="پیام خود را بنویسید ..." rows="2"></textarea>   
+                    </div>
+                </form>
+          </div>
+       </div>
+       </div>
+       </div>             
+        <div class="my_requests">
+            <div class="card border-white">
+                <div class="card-header bg-white" style="padding-bottom: 0; box-shadow: 0px 7px 7px -5px #ddd">
+                    <h5 class="mb-sm-1 mb-md-0"> درخواست جستجوی دستیار آموزشی </h5>              
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist"  dir="ltr" style="">
+<!--
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><span class="badge badge-pill badge-danger">2</span> همه درخواست ها </a>
+                      </li>
+-->
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><span class="badge badge-pill badge-danger">2</span> همه پاسخ ها  </a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">ذخیره شده</a>
+                      </li>
+                    </ul>
+                </div>
+                <div class="card-body" style="padding: 1em 0 1em 0;">
+                  <div id="RequestExplianation">
+                      <div class="card">
+                      
+                      <table class="table">
+                      <tbody>
+                        <tr>
+                          <td scope="row" style="border-top: none;"> 
+                              
+                            <div class="card border-white" style="max-width: 900px;">
+                                <div class="row">
+                                  <div class="card-body">
+                                    <h5 class="card-title form-check-inline"> {{ request.course_name }} </h5>
+                                    <p class="card-text"> {{ request.description }} </p>
+                                    <h5>
+                                      {% if request.masters %}
+                                      <span class="badge badge-danger">دانشجوی تحصیلات تکمیلی</span>
+                                      {% endif %}
+                                      {% if request.bachelor %}
+                                      <span class="badge badge-warning">دانشجوی کارشناسی</span>
+                                      {% endif %}
+                                    </h5>
+                                    <hr>
+                                    <p class="card-text"><small class="text-muted">  {{ request.datetime }} </small>
+                                    <a class="btn btn-primary btn-md" href="#" role="button"> ویرایش <i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-danger btn-md" href="#" role="button"> حذف <i class="fas fa-trash-alt"></i></a>
+                                    </p>
+                                  </div>
+                                </div>    
+                            </div>
+                          </td>
+                        </tr> 
+                    </tbody>
+                    </table>  
+<!--
+                    <div class="col-sm-12 col-sm-6">
+                        <div class="card" style="max-width: 700px;">
+                          <div class="row">
+                              <div class="card-body">
+                                <h5 class="card-title form-check-inline">  مبانی رایانش امن </h5>
+                                <p class="card-text">  دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت همکاری پیام دهند. </p>
+                                <p class="card-text"><small class="text-muted">  3 روز پیش </small>
+                                <a class="btn btn-primary btn-md" href="#" role="button"> ویرایش <i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger btn-md" href="#" role="button"> حذف <i class="fas fa-trash-alt"></i></a>
+                                </p>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+-->                 </div>
+                  </div>
+                </div>    
+<!--
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">پاسخ ها <span class="badge badge-pill badge-danger" style="position: absolute;font-size: 1em; margin-top: -1em;">2</span></a>
+                  </div>
+                </nav>
+-->
+
+   
+<!--                <div class="tab-content">-->
+                <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">    
+<!--                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">-->
+<!--                    <div class="card-body" style="padding-left: 0; padding-right: 0;">-->
+<!--
+                <h6 class="card-header bg-white"><i class="fas fa-reply"></i> پاسخ ها 
+                <span class="badge badge-pill badge-danger">2</span>
+                </h6>
+-->
+                <div class="card-body" style="padding: 1em 0 1em 0;">
+                  <div id="Replayscard">
+                     <div class="card">
+                      <table class="table">
+                      {% for reply in replies %}
+                      <tbody>                        
+                        <tr>
+                          <td scope="row" style="border-top: none;"> 
+                            <div class="card border-white" style="max-width: 900px;">
+                              <div class="row">                                
+                                  <div class="card-body">
+                                    <div class="icons">
+                                        <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
+                                        <i class="far fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="ذخیره درخواست"></i>
+                                    </div>  
+                                    <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> {{ reply.replier_fname }} {{ reply.replier_lname }} </h5>
+                                    <p class="card-text"> {{ reply.reply_text }} </p><hr>
+                                    <p class="card-text"><small class="text-muted"> {{ reply.datetime }} </small>
+                                    <a class="btn btn-success btn-md" href="#" role="button"> پذیرش <i class="far fa-handshake"></i></a>
+                                    <a class="btn btn-danger btn-md" href="#" role="button"> رد پاسخ <i class="fas fa-handshake-slash"></i></a>
+                                    </p>
+                                  </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>                                              
+                      </tbody>
+                      {% endfor %}  
+                    </table>
+                    <div class="card-footer">
+                    <nav id="page-counter" class="bg-light">
+                      <ul class="pagination">  
+                        <li class="page-item" style=" white-space: nowrap;">
+                          {% if replies.has_previous %}
+                          <a class="page-link" href="replies?cid={{ request.id }}&page={{replies.previous_page_number}}" 
+                          aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                              قبلی
+                          </a>
+                          {% endif %}
+                        </li>
+                        <!-- 
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                        -->
+                        <li class="page-item" style=" white-space: nowrap;">
+                          {% if replies.has_next %}
+                          <a class="page-link" href="replies?cid={{ request.id }}&page={{replies.next_page_number}}" 
+                          aria-label="Next">بعدی
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                          {% endif %}
+                        </li>
+                      </ul>
+                    </nav>
+                    </div>     
+                    </div>   
+                  </div>  
+                </div>                                        
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">   
+<!--                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">-->
+<!--                    <div class="card-body" style="padding-left: 0; padding-right: 0;">-->
+<!--
+                <h6 class="card-header bg-white"><i class="fas fa-bookmark"></i> پاسخ های نشان شده
+                <span class="badge badge-pill badge-danger">7</span>
+                </h6>
+-->
+                    
+                <div class="card-body" style="padding: 1em 0 1em 0;">
+                  <div id="Replayscard">
+                     <div class="card">
+                      <table class="table">
+                      <tbody>
+                        <tr>
+                          <td scope="row" style="border-top: none;"> 
+                            <div class="card border-white" style="max-width: 900px;">
+                              <div class="row">                                
+                                  <div class="card-body">
+                                    <div class="icons">
+                                        <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
+                                        <i class="fas fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="ذخیره درخواست"></i>
+                                    </div>                                       
+                                    <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="...">سارا برادران قهفرخی سمنتینست شتنس</h5>
+                                    <p class="card-text"> با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت صلاحدید شما مایل به همکاری به عنوان دستیار آموزشی در این درس هستم. </p>
+                                    <p class="card-text"><small class="text-muted">  3 روز پیش </small>
+                                    <a class="btn btn-success btn-md" href="#" role="button"> پذیرش <i class="far fa-handshake"></i></a>
+                                    <a class="btn btn-danger btn-md" href="#" role="button"> رد پاسخ <i class="fas fa-handshake-slash"></i></a>
+                                    </p>
+                                  </div>
+                              </div>
+                            </div>
+
+                          </td>
+
+                        </tr>
+                        <tr>
+                          <td scope="row">
+                            <div class="card border-white" style="max-width: 900px;">
+                              <div class="row">
+                                  <div class="card-body">
+                                    <div class="icons">
+                                        <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
+                                        <i class="fas fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="ذخیره درخواست"></i>
+                                    </div>                                       
+                                    <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> پریسا ملاحسینی </h5>
+                                    <p class="card-text"> با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت صلاحدید شما مایل به همکاری به عنوان دستیار آموزشی در این درس هستم. </p>
+                                      
+                                    <p class="card-text"><small class="text-muted">  3 روز پیش </small>
+                                    <a class="btn btn-success btn-md" href="#" role="button"> پذیرش <i class="far fa-handshake"></i></a>
+                                    <a class="btn btn-danger btn-md" href="#" role="button"> رد پاسخ <i class="fas fa-handshake-slash"></i></a>
+                                    </p>
+                                  </div>
+                              </div>
+                            </div>
+
+                          </td>
+
+                        </tr>  
+                        <tr>
+                          <td scope="row">
+                            <div class="card border-white" style="max-width: 900px;">
+                              <div class="row">                                 
+                                  <div class="card-body">
+                                    <div class="icons">
+                                        <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
+                                        <i class="fas fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="ذخیره درخواست"></i>
+                                    </div>                                       
+                                    <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> پریسا ملاحسینی </h5>
+                                    <p class="card-text"> با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت صلاحدید شما مایل به همکاری به عنوان دستیار آموزشی در این درس هستم. </p>
+                                    <p class="card-text"><small class="text-muted">  3 روز پیش </small>
+                                    <a class="btn btn-success btn-md" href="#" role="button"> پذیرش <i class="far fa-handshake"></i></a>
+                                    <a class="btn btn-danger btn-md" href="#" role="button"> رد پاسخ <i class="fas fa-handshake-slash"></i></a>
+                                    </p>
+                                  </div>
+                              </div>
+                            </div>
+
+                          </td>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="card-footer">
+                    <nav id="page-counter" class="bg-light">
+                      <ul class="pagination">  
+                        <li class="page-item" style=" white-space: nowrap;">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                              قبلی
+                          </a>
+                        </li> 
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                        <li class="page-item" style=" white-space: nowrap;">
+                          <a class="page-link" href="#" aria-label="Next">بعدی
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                    </div>     
+                    </div>   
+                  </div>  
+                </div>                                        
+                </div>                    
+                </div>                             
+                </div>
+        </div>
+        </main>
+
+
+        <div class="col-md-4 col-lg-3 col-xl-3 pl-xl-4 pr-xl-5 pr-lg-3 pr-lg-3 bd-sidebar">
+            <div class="leftside">
+                    <div class="card card-body searchbox">
+                            <form>
+                                <div class="col-md-12 col-lg-12 col-xl-12" style="direction: ltr">                                                     
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <button class="btn btn-success" type="button" id="button-addon1"> <i class="fas fa-search"></i> </button>
+                                  </div>
+                                  <input type="search" class="form-control" placeholder="جستجو" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                </div>
+                                </div>
+                            </form> 
+                      </div>
+                <div class="courses">
+
+                    <ul class="list-group">
+
+                  
+                      <li class="list-group-item course-title"> <div class="text-muted"><i class="fas fa-book"></i> درس ها  </div></li>
+                    
+                      <li class="list-group-item"> 
+                      <a class="firstlistitem" data-toggle="collapse" href=".term98-99-2" role="button" aria-expanded="true" aria-controls="term98-99-2">
+                      <i class="fas fa-angle-down"></i> ترم دو سال تحصیلی 98-99 
+                      </a>
+                      </li>      
+                      
+                      <li class="list-group-item collapse show term98-99-2"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
+                      <li class="list-group-item collapse show term98-99-2"> <a href="course.html">آزمایشگاه برنامه نویسی پیشرفته</a></li>
+                      <li class="list-group-item collapse show term98-99-2"> <a href="course.html">مبانی رایانش امن</a></li>
+                      <li class="list-group-item collapse show term98-99-2"> <a href="course.html">توسعه امن نرم افزار</a></li>
+                    
+                      
+                      <li class="list-group-item"> 
+                      <a class="firstlistitem" data-toggle="collapse" href=".term98-99-1" role="button" aria-expanded="false" aria-controls="term98-99-1">
+                      <i class="fas fa-angle-down"></i> ترم یک سال تحصیلی 98-99 
+                      </a>
+                      </li>
+                        
+                      <li class="list-group-item collapse term98-99-1"> <a href="course.html">طراحی کامپایلر</a></li>
+                      <li class="list-group-item collapse term98-99-1"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
+                        
+                      <li class="list-group-item"> 
+                      <a class="firstlistitem" data-toggle="collapse" href=".term97-98-2" role="button" aria-expanded="false" aria-controls="term97-98-2">
+                      <i class="fas fa-angle-down"></i> ترم دو سال تحصیلی 97-98 
+                      </a>
+                      </li>
+                        
+                      <li class="list-group-item collapse term97-98-2"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
+                      <li class="list-group-item collapse term97-98-2"> <a href="course.html">طراحی کامپایلر</a></li>
+                      <li class="list-group-item collapse term97-98-2"> <a href="course.html">برنامه نویسی پیشرفته</a></li>
+                        
+                    </ul>
+                </div>
+             </div>  
+        </div>
+        </div>
+    </div>
+        
+        <div class="col-xl-12 bottomnav">
+        <div class="jumbotron">
+          <img src="iut2.png" alt="picture can not found">
+          <hr class="my-4">
+          <p> راه اندازی شده توسط دانشگاه صنعتی اصفهان</p>
+          <p> دانشکده مهندسی برق و کامپیوتر </p>
+        </div>
+        </div>
+  
+        <script src="{% static 'replays.js' %}"></script>     
+</body>
+</html>

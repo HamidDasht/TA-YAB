@@ -411,9 +411,9 @@
                                   <h5><span class="badge badge-danger">دانشجو ارشد</span></h5>
                                   {% endif %}
                                   {% if request.bachelor %}
-                                  <span class="badge badge-warning">دانشجو کارشناسی</span></h5>
+                                  <h5><span class="badge badge-warning">دانشجو کارشناسی</span></h5>
                                   {% endif %}
-                                  <p class="card-text"><small class="text-muted"> {{ request.date }} </small>
+                                  <p class="card-text"><small class="text-muted"> {{ request.datetime }} </small>
                                     {% csrf_token %}
                                     <a class="btn btn-success btn-md send_rep" value='{{ request.id }}' href="#"
                                       role="button" data-toggle="modal" data-target="#SendReplayCard"
@@ -440,7 +440,6 @@
                               {% endif %}
                             </li>
                             <!--
-                            
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>

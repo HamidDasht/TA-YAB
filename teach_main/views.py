@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from .models import Request, Timing
+from django.core.paginator import Paginator, EmptyPage
+from .models import Request, Timing, Reply
 from django.http import HttpResponseRedirect
 from register.models import TEACHER, UserProfile
 from django.contrib.auth.decorators import login_required
@@ -14,10 +15,24 @@ def index(request):
         profile = UserProfile.objects.get(user__username=user.get_username())
     except:
         return redirect('../home')
-        return HttpResponse("<h1>شما اجازه ی ورود به این صفحه را نداریم</h1>")
     if profile.type != TEACHER:
         return redirect('../std')
-        return HttpResponse("<h1>شما اجازه ی ورود به این صفحه را نداریم</h1>")
+
+    
+    requests = Request.objects.filter(owner=user).order_by('-datetime')
+    p = Paginator(requests, 3)
+    page_num = request.GET.get('page', 1)
+    try:
+        page = p.page(page_num)
+    except EmptyPage:
+        page = p.page(1)
+    return render(
+        request, 'teach_main/profpage.html', 
+    {'requests':page , 'teacher_name': user.first_name + ' ' + user.last_name,
+    'email': user.email}
+    )
+    
+
     return render(request, 'teach_main/profpage.html',  {'teacher_name': user.first_name + ' ' + user.last_name,
     'email': user.email})
 
@@ -56,8 +71,8 @@ def addreq(request):
             bachelor = False
     
     if (course_name != False):
-        new_req = Request(course_name = course_name, description=description, masters=masters, bachelor=bachelor,
-        prof_fname=user.first_name, prof_lname=user.last_name, prof_id='123')
+        new_req = Request(owner=user, course_name = course_name, description=description, masters=masters, bachelor=bachelor,
+        prof_fname=user.first_name, prof_lname=user.last_name)
         new_req.save()
         while len(schedule_strings) != 0:
             new_time = Timing(day=days.pop(), start=start_times.pop(), end=finish_times.pop(), request=new_req)
@@ -100,3 +115,36 @@ def add_time(request):
                 str_day = 'چهارشنبه'
             days.append(str_day)
         return HttpResponse('')
+
+
+@login_required(login_url='../../home')
+def replies(request):
+    if request.method == 'GET':
+        cid = request.GET.get('cid')
+        user = request.user
+        try:
+            profile = UserProfile.objects.get(user__username=user.get_username())
+        except: 
+            return redirect('../home')
+        if profile.type != TEACHER:
+            return redirect('../prof')
+        try:
+            ta_request = Request.objects.filter(id=cid)[0]
+        except:
+            return redirect('../prof')
+        if ta_request.owner != request.user:
+            return redirect('../prof')
+        
+        # Retrieve all replies to the specified request
+        replies = Reply.objects.filter(request=ta_request).order_by('datetime')
+
+        p = Paginator(replies, 3)
+        page_num = request.GET.get('page', 1)
+        try:
+            page = p.page(page_num)
+        except EmptyPage:
+            page = p.page(1)
+
+        return render(request, 'teach_main/replies.html',{ 
+        'request':ta_request, 'replies':page, 'teacher_name': user.first_name + ' ' + user.last_name,
+        'email': user.email})

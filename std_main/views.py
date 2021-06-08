@@ -19,10 +19,8 @@ def index(request):
         profile = UserProfile.objects.get(user__username=user.get_username())
     except:
         return redirect('../home')
-        return HttpResponse("<h1>شما اجازه ی ورود به این صفحه را نداریم</h1>")
     if profile.type != STUDENT:
         return redirect('../prof')
-        return HttpResponse("<h1>شما اجازه ی ورود به این صفحه را نداریم</h1>")
 
     global replying_course_id
     requests = Request.objects.all().order_by('-datetime')
@@ -58,7 +56,7 @@ def index(request):
             
             if (reply_text != False):
                 new_reply = Reply(reply_text=reply_text+ ' ' + reply_times_str, replier_fname=user.first_name,
-                 replier_lname=user.last_name, replier_id='2', request=related_req)
+                 replier_lname=user.last_name, owner=user, request=related_req)
                 new_reply.save()
             
             replying_course_id = -1

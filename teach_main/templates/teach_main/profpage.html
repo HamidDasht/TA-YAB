@@ -240,101 +240,63 @@
                   <div id="Requests">
                     <div class="card">
                       <table class="table">
+                        {% for request in requests %}
                         <tbody>
                           <tr>
                             <td scope="row" style="border-top: none;">
                               <div class="jumbotron">
                                 <a href="#">
-                                  <h1>مبانی رایانش امن </h1>
+                                  <h1> {{ request.course_name }} </h1>
                                 </a>
-                                <p class="lead"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت
-                                  همکاری پیام دهند. </p>
-                                <h5><span class="badge badge-danger">دانشجو ارشد</span></h5>
+                                <p class="lead"> {{ request.description }} </p>
+                                {% if request.masters %}
+                                <h5><span class="badge badge-danger">دانشجوی تحصیلات تکمیلی</span></h5>
+                                {% endif %}
+                                {% if request.bachelor %}
+                                <h5><span class="badge badge-warning">دانشجوی کارشناسی</span></h5>
+                                {% endif %}
                                 <hr class="my-4">
-                                <p class="text-muted" style="float: right;"> 3 آبان 1399 ساعت 13:56 </p>
+                                <p class="text-muted" style="float: right;"> {{ request.datetime }}  </p>
                                 <div style="position: relative; float: left;">
 
-                                  <a class="btn text-info border-info btn-md my-2 " href="replays.html" role="button"><i
+                                  <a class="btn text-info border-info btn-md my-2 " href="{% url 'replies' %}?cid={{ request.id }}" role="button"><i
                                       class="fas fa-reply"></i> پاسخ ها <span class="badge badge-pill badge-danger"
                                       style="position: absolute; font-size: 0.9em;background: #35bd80;">5</span></a>
                                 </div>
                               </div>
 
                             </td>
-
-                          </tr>
-                          <tr>
-                            <td scope="row">
-                              <div class="jumbotron">
-                                <a href="#">
-                                  <h1>مبانی رایانش امن </h1>
-                                </a>
-                                <p class="lead"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت
-                                  همکاری پیام دهند. </p>
-                                <h5><span class="badge badge-danger">دانشجو ارشد</span><span
-                                    class="badge badge-warning">دانشجو کارشناسی</span></h5>
-                                <hr class="my-4">
-                                <p class="text-muted" style="float: right;"> 3 آبان 1399 ساعت 13:56 </p>
-                                <div style="position: relative; float: left;">
-                                  <!--
-                                  <a class="btn text-primary border-primary btn-md" href="#" role="button">ویرایش <i class="fas fa-edit"></i></a>
-                                  <a class="btn text-danger border-danger btn-md" href="#" role="button">  حذف <i class="fas fa-trash-alt"></i></a>
--->
-                                  <a class="btn text-info border-info btn-md my-2 " href="replays.html" role="button"><i
-                                      class="fas fa-reply"></i> پاسخ ها <span class="badge badge-pill badge-danger"
-                                      style="position: absolute; font-size: 0.9em;background: #35bd80;">5</span></a>
-                                </div>
-                              </div>
-
-                            </td>
-
-                          </tr>
-                          <tr>
-                            <td scope="row">
-                              <div class="jumbotron">
-                                <a href="#">
-                                  <h1>مبانی رایانش امن </h1>
-                                </a>
-                                <p class="lead"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می توانند جهت
-                                  همکاری پیام دهند. </p>
-                                <h5><span class="badge badge-danger">دانشجو ارشد</span></h5>
-                                <hr class="my-4">
-                                <p class="text-muted" style="float: right;"> 3 آبان 1399 ساعت 13:56 </p>
-                                <div style="position: relative; float: left;">
-                                  <!--
-                                  <a class="btn text-primary border-primary btn-md" href="#" role="button">ویرایش <i class="fas fa-edit"></i></a>
-                                  <a class="btn text-danger border-danger btn-md" href="#" role="button">  حذف <i class="fas fa-trash-alt"></i></a>
--->
-                                  <a class="btn text-info border-info btn-md my-2 " href="replays.html" role="button"><i
-                                      class="fas fa-reply"></i> پاسخ ها <span class="badge badge-pill badge-danger"
-                                      style="position: absolute; font-size: 0.9em;background: #35bd80;">5</span></a>
-                                </div>
-                              </div>
-
-                            </td>
-
                           </tr>
                         </tbody>
+                        {% endfor %}
                       </table>
                       <div class="card-footer">
                         <nav id="page-counter" class="bg-light">
                           <ul class="pagination">
                             <li class="page-item" style=" white-space: nowrap;">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              {% if requests.has_previous %}
+                              <a class="page-link" href="{% url 'profes' %}?page={{requests.previous_page_number}}" 
+                                aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                                 قبلی
                               </a>
+                              {% endif %}
                             </li>
+                            <!--
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">4</a></li>
                             <li class="page-item"><a class="page-link" href="#">5</a></li>
                             <li class="page-item"><a class="page-link" href="#">6</a></li>
+                            <li class="page-item" style=" white-space: nowrap;">-->
                             <li class="page-item" style=" white-space: nowrap;">
-                              <a class="page-link" href="#" aria-label="Next">بعدی
+                            {% if requests.has_next %}
+                            <a class="page-link" href="{% url 'profes' %}?page={{requests.next_page_number}}"
+                             aria-label="Next">بعدی
                                 <span aria-hidden="true">&raquo;</span>
                               </a>
+                              {% endif %}
                             </li>
                           </ul>
                         </nav>
