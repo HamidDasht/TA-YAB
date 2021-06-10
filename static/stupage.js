@@ -118,11 +118,16 @@ $('.send_rep').click(function() {
     dataType: 'json',
     data: {csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),id : $(this).attr('value')},
     success: function(json_resp){
+        $('.alltimes').remove();
+        document.getElementById("send_rep_button").hidden=false
+        message_area = document.getElementById("message-text").disabled=false
+        message_area = document.getElementById("message-text").innerHTML=""
+        if (json_resp.status == "200")
+        {
         //var resp = JSON.parse(json_resp);
         document.getElementById("recipient-name").value = json_resp.course_name;
         //document.getElementById("recipient-name").value = json_resp.times[0];
         //$('#recipient-name').value(resp)
-        $('.alltimes').remove();
         //all_times = document.getElementsByClassName('alltimes')
         //if (all_times)
           //  all_times.remove()
@@ -164,8 +169,56 @@ $('.send_rep').click(function() {
             div.appendChild(lbl);
             form.appendChild(div);
         }
+        }
+        else if (json_resp.status == "403")
+        {
+            document.getElementById("send_rep_button").hidden=true
+            document.getElementById("recipient-name").value = json_resp.course_name
+            message_area = document.getElementById("message-text")
+            message_area.innerHTML = json_resp.reply_text
+            message_area.disabled = true
+            
+            let form = document.getElementById("myform");
+            if (json_resp.number_of_timings == 0)
+            {
+                let div = document.createElement('div');
+                div.classList.add("custom-control");
+                div.classList.add("alltimes");
+
+                let inp = document.createElement('p');
+                lbl = document.createElement('label');
+                lbl.innerHTML = "هیچ ساعت مشخص شده ای وجود ندارد"
+
+                div.appendChild(inp);
+                div.appendChild(lbl);
+                form.appendChild(div);
+            }
+            for (var i = 0; i < json_resp.number_of_timings;i++)
+            {
+                let div = document.createElement('div');
+                div.classList.add("custom-control");
+                div.classList.add("custom-checkbox");
+                div.classList.add("alltimes");
+
+                let inp = document.createElement('input');
+                inp.setAttribute('type', 'checkbox');
+                inp.setAttribute('id', 'time' + i);
+                inp.setAttribute('name', 'time' + i);
+                inp.setAttribute('value', json_resp.times[i]);
+                inp.setAttribute('disabled', true);
+                inp.classList.add("custom-control-input");
+                lbl = document.createElement('label');
+                lbl.classList.add("custom-control-label");
+                lbl.setAttribute('for', 'time' + i)
+                lbl.innerHTML = json_resp.times[i]
+
+                div.appendChild(inp);
+                div.appendChild(lbl);
+                form.appendChild(div);
+            }
+
+        }
     }
-    
   });
 });
 //   $.ajax(  

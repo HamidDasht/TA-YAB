@@ -75,17 +75,35 @@ def send_reply(request):
             related_req = Request.objects.filter(id=int(replying_course_id))[0]
             
             related_timings = Timing.objects.filter(request=related_req)
-            json_res = {}
+
+            # Is the request already replied?
+            try:
+                reply = Reply.objects.filter(request=related_req,owner=request.user)[0]
+            except:
+                reply = None
+            if reply:
+                response = {"status": "403"}
+                response['reply_text'] = reply.reply_text
+                response['course_name'] = str(related_req.course_name)+ ' - ' + str(related_req.prof_lname)
+                response['number_of_timings'] = len(related_timings)
+                times = {}
+                for i in range(0,len(related_timings)):
+                    times[str(i)] = str(related_timings[i].day) + ' - ' + str(related_timings[i].start) + str(' تا ') + str(related_timings[i].end)
+                response['times'] = times
+                print(response)
+                return JsonResponse(response)
+            
+            json_res = {"status": "200"}
             json_res['course_name'] = str(related_req.course_name)+ ' - ' + str(related_req.prof_lname)
             json_res['number_of_timings'] = len(related_timings)
             times = {}
             for i in range(0,len(related_timings)):
                 times[str(i)] = str(related_timings[i].day) + ' - ' + str(related_timings[i].start) + str(' تا ') + str(related_timings[i].end)
             json_res['times'] = times
-            print(str(related_req.course_name)+ ' - ' + str(related_req.prof_lname))
+            #print(str(related_req.course_name)+ ' - ' + str(related_req.prof_lname))
             
-            print(json_res)
-            print(JsonResponse(json_res))
+            #print(json_res)
+            #print(JsonResponse(json_res))
             return JsonResponse(json_res)
         else:
             return ' '
