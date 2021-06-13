@@ -1,3 +1,4 @@
+from django.http.response import JsonResponse
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage
@@ -148,3 +149,21 @@ def replies(request):
         return render(request, 'teach_main/replies.html',{ 
         'request':ta_request, 'replies':page, 'teacher_name': user.first_name + ' ' + user.last_name,
         'email': user.email})
+
+def accept_reply(request):
+    if request.method == 'GET':
+        reply_id = request.GET.get('id', False)
+        if (reply_id != -1):
+            related_reply = Reply.objects.filter(id=int(reply_id))[0]
+            related_reply.is_accepted = True
+            related_reply.save(update_fields=['is_accepted'])
+            return JsonResponse({'status':'success', 'reply_id':reply_id})
+
+def reject_reply(request):
+    if request.method == 'GET':
+        reply_id = request.GET.get('id', False)
+        if (reply_id != -1):
+            related_reply = Reply.objects.filter(id=int(reply_id))[0]
+            related_reply.is_rejected = True
+            related_reply.save(update_fields=['is_rejected'])
+            return JsonResponse({'status':'success', 'reply_id':reply_id})

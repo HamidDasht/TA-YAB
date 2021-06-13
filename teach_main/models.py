@@ -17,7 +17,7 @@ class Request(models.Model):
     datetime = models.DateTimeField(auto_now_add=True, blank=True)
     def __str__(self):
         return self.course_name + '(' + str(self.id) + ')'
-        
+
 class Timing(models.Model):
     request = models.ForeignKey(Request, on_delete=models.CASCADE)
     day = models.CharField(max_length=15)

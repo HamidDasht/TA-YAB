@@ -28,6 +28,57 @@
 
 
 
+$('.accept_button').click(function() {
+    $.ajax(  
+      {
+      url : "accept_reply",
+      type : 'GET',
+      dataType: 'json',
+      data: {
+          csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            id : $(this).attr('value')
+        },
+      success: function(json_resp)
+      {
+          let accept_button = "#accept" + json_resp.reply_id;
+          let reject_button = "#reject" + json_resp.reply_id;
+
+          $(accept_button).attr('disabled','true');
+          $(accept_button).text('پذیرفته شده');
+          $(accept_button).append(' <i class="far fa-handshake"></i>');
+          $(reject_button).remove();
+          $(accept_button).removeClass('accept_button');
+      }
+      
+    });
+  });
+
+  
+$('.reject_button').click(function() {
+    $.ajax(  
+      {
+      url : "reject_reply",
+      type : 'GET',
+      dataType: 'json',
+      data: {
+          csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            id : $(this).attr('value')
+        },
+      success: function(json_resp)
+      {
+          let accept_button = "#accept" + json_resp.reply_id;
+          let reject_button = "#reject" + json_resp.reply_id;
+
+          $(reject_button).attr('disabled','true');
+          $(reject_button).text('رد شده');
+          $(reject_button).append(' <i class="fas fa-handshake-slash"></i>');
+          $(accept_button).remove();
+          $(reject_button).removeClass('reject_button');
+      }
+      
+    });
+  });
+
 $('.fa-bookmark').click(function(){
     
     console.log('sjkas');
