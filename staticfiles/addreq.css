@@ -1,0 +1,144 @@
+
+
+main label{
+   
+    float: right;
+}
+
+main .TimeSelectionType{
+    float: right;
+    margin: 1em 0 1em 1em;
+}
+main .timebox label{
+    white-space: nowrap;
+    margin-left: 1em;
+}
+
+main .timebox input{
+    
+    margin-left: 1em;
+}
+main .timebox select{
+    margin-right: 1em;
+    padding-right: 1em;
+    margin-left: 1em;
+}
+
+main .timebox #duration{
+    width: 4em;
+    margin-left: 1em;
+}
+main .timebox{
+    float: right;
+    direction: rtl;
+    margin-right: 0;
+}
+
+
+main button{
+
+   margin-left: 1em;
+     
+
+}
+
+
+.card-header h4, p{
+    
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 0;
+    
+}
+.card-header h4 i{
+    font-size: 2.5em;
+    margin-left: 0.1em;
+    color: #aaa;
+}
+
+main #division-time{
+    display: none;
+}
+
+tbody{
+    font-size: 0.9em;
+    text-align: center;
+
+    
+}
+.table{
+
+    margin:0;
+    
+}
+#time-table{
+    display: block;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 100%;
+    
+/*
+    border-left: 1px solid #ced4da;
+    border-right: 1px solid #ced4da;
+    box-shadow: 0px 7px 7px -5px #ddd;
+*/
+
+
+}
+
+
+#time-table td{
+    border: 1px solid #f8f9fa;
+    border-bottom-color: #ced4da;
+    padding: 0;
+    line-height: 3em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.my_requests #main-header{
+    padding-bottom: 2em;
+    box-shadow: 0px 7px 7px -5px #ddd;
+    
+}
+
+#form-table tr td{
+    padding: 0;
+    border: none;
+    text-align: right;
+}
+
+.form-check-inline{
+    margin-right: 0;
+}
+small{
+/*    color: #007bff;*/
+      color: #6c757d;
+}
+.my_requests {
+    
+    margin-bottom: 5em;
+/*    margin-top: 2em;*/
+}
+#last-requests .card{
+    margin-bottom: 2em;
+}
+
+/*
+
+#sun-48, #mon-48, #tu-48, #wed-48{
+   border-right: 1px solid #ced4da;
+}
+*/
+
+/*
+.my_requests{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    right: 25%;
+    left: 25%
+    background: green;
+}*/

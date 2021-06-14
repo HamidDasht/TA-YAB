@@ -1,3 +1,4 @@
+from django.db.models.query import QuerySet
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, request
 from teach_main.models import Request,Reply,Timing
@@ -24,22 +25,53 @@ def index(request):
 
     global replying_course_id
     requests = Request.objects.all().order_by('-datetime')
-    p = Paginator(requests, 3)
-    page_num = request.GET.get('page', 1)
+    p_request = Paginator(requests, 3)
+    page_num = request.GET.get('reqpage', 1)
     try:
-        page = p.page(page_num)
+        page_request = p_request.page(page_num)
     except EmptyPage:
-        page = p.page(1)
+        page_request = p_request.page(1)
+
+    # Which tab is selected? (Requests/Replies/Bookmars)
+    if 'reqpage' in request.GET:
+        reply_aria_selected = False
+        request_aria_selected = True
+    elif 'reppage' in request.GET:
+        reply_aria_selected = True
+        request_aria_selected = False
+    else:
+        request_aria_selected = True
+        reply_aria_selected = False
+
+
+    # Get replies for replies page
+    replies = Reply.objects.filter(owner=user).order_by('-datetime')
+    #parent_request_of_reply = []
+    #for rep in replies:
+    #    parent_request_of_reply.append(rep.request)
+    #print(parent_request_of_reply)
+    #print(replies)
+    #parent_request_of_reply = QuerySet(parent_request_of_reply)
+    #print(parent_request_of_reply)
+    p_reply = Paginator(replies, 3)
+    page_num = request.GET.get('reppage', 1)
+    try:
+        page_reply = p_reply.page(page_num)
+    except EmptyPage:
+        page_reply = p_reply.page(1)
 
     if request.method == 'GET':
         return render(
             request, 'std_main/studentpage.html', 
-        {'requests':page , 'std_name': user.first_name + ' ' + user.last_name, 
-        'email': user.email}
+        {'requests':page_request , 'std_name': user.first_name + ' ' + user.last_name, 
+        'email': user.email, 'replies':page_reply, 'reply_aria_selected':reply_aria_selected
+        ,'request_aria_selected':request_aria_selected}
         )
 
     elif request.method == 'POST':
         if replying_course_id != -1:
+            request_aria_selected = True
+            reply_aria_selected = False
             reply_text = request.POST.get('message-text',False)
             related_req = Request.objects.filter(id=int(replying_course_id))[0]
             num_of_times = len(Timing.objects.filter(request=related_req))
@@ -60,9 +92,13 @@ def index(request):
                 new_reply.save()
             
             replying_course_id = -1
-
-    print(reply_text)
-    return render(request, 'std_main/studentpage.html', {'requests':page, 'success': True})
+    try:
+        print(reply_text)
+    except:
+        pass
+    return render(request, 'std_main/studentpage.html', {'requests':page_request, 'replies': page_reply
+    ,'success': True, 'email':user.email, 'std_name': user.first_name + ' ' + user.last_name
+    ,'reply_aria_selected':reply_aria_selected,'request_aria_selected':request_aria_selected})
 
 
 @login_required(login_url='../home')

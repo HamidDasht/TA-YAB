@@ -49,6 +49,37 @@ $('.fa-bookmark').click(function(){
 //
 //});
 
+$(function()
+{
+    /*
+         
+        // for bootstrap 3 use 'shown.bs.tab', for bootstrap 2 use 'shown' in the next line
+        $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+            // save the latest tab; use cookies if you like 'em better:
+            localStorage.setItem('lastTab', $(this).attr('href'));
+        });
+    
+        // go to the latest tab, if it exists:
+        var lastTab = localStorage.getItem('lastTab');
+        if (lastTab) 
+        {
+            $('[href="' + lastTab + '"]').tab('show');
+        }
+        
+        if (lastTab == '#pills-profile' )
+        {
+            $('#pills-tab').children('.nav-item').children('.nav-link').css("background-color", "white");
+            $('#pills-tab').children('.nav-item').children('.nav-link').css("border-bottom-color", "white");
+            tab.css("border-bottom-color", "#1bb9b7");
+            tab.css("color", "black");
+        }
+
+        $(window).load();
+        //$("#pills-tabContent").removeStyle('display');
+      */
+           
+            
+});
 
 $('#pills-tab').children('.nav-item').children('.nav-link').click(function(){
     

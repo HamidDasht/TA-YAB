@@ -1,0 +1,111 @@
+body{
+    font-family: Sahel, Tahoma, Helvetica, sans-serif;
+}
+.loginbox{
+/*
+    
+    margin: 5.4em 5% 1.5em 5%;
+*/
+    margin: 1em 0.5em 1em 0.5em;
+    padding: 0 10%;
+    border: 1px #ddd solid;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.loginbox h1{
+    
+    margin: 15% 0 15% 0;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.loginbox form i{
+    
+    position: relative;
+    color: #aaa;
+    top: 2.5em;
+    left: 0.5em;
+    
+}
+
+.loginbox input{    
+    direction: rtl;
+}
+
+.loginbox label{
+    
+    float: right;
+}
+
+#loginError{
+    
+    text-align: right;
+    direction: rtl;
+    color: red;
+}
+
+button[type = "submit"]{
+    
+    margin: 15% 25% 10% 25%;
+    width: 50%;
+    
+}
+
+.allpage{
+    margin-top: 5em;
+/*    direction: rtl;*/
+}
+
+h5{
+    text-align: right;
+}
+
+.requests .row .card{
+    transition: ease-out 0.5;
+    margin-bottom: 1.5em;
+}
+
+.requests .row .card:hover{
+    
+    cursor: pointer; 
+    box-shadow: 0 0 5px #999;
+}
+
+.requests .row .card-header{
+    color: white;
+    background-color: #1bb9b7;
+    direction: rtl;
+    text-align: right;
+    margin-right: 0;
+    
+}
+.requests .row .card-header img{
+        
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    float: right;
+    margin-left: 0.5em;
+}
+
+.requests p{
+    
+    direction: rtl;
+}
+.requests .card-text{
+    
+    text-align: right;
+    direction: rtl;
+}
+.requests .card-title{
+    color: #0099cc;
+    
+}
+
+
+@font-face{
+    src: url("Sahel.ttf");
+    font-family:"Sahel";
+}

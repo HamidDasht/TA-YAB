@@ -1,0 +1,230 @@
+
+.my_requests{
+    
+    text-align: right;
+}
+
+.my_requests .jumbotron h1{
+    
+    font-size: 2em;
+    color: #0099cc;
+    margin-bottom: 0.5em;
+}
+
+.my_requests .jumbotron{
+    
+    background: white;
+    padding: 0;
+    
+}
+
+.bg-warning{
+    color: black;
+}
+
+form{
+    margin-top: 1em;
+}
+
+.form-group{
+    
+    margin-left: 2em;
+    margin-right: 0;
+}
+
+.card a{
+    margin-top: 1em;
+}
+
+span{
+    color: #0099cc;
+}
+
+/*
+.card{
+    
+    box-shadow: 0px 0px 5px 0px #ddd;
+    transition: all 0.5s;
+}
+*/
+
+#messagebox{
+    display:block;
+    height:40em;
+    overflow-y:scroll;
+    overflow-x: hidden;
+}
+
+
+#messagebox .right-msg .card-title{
+    color: #1bb9b7; 
+    margin-top: 1em;
+}
+
+#messagebox .right-msg .card-title img{
+    
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    float: right;
+    margin-left: 0.5em;
+    
+}
+
+#messagebox .right-msg .msg{
+    
+    padding: 1em 1em 0em 1em;
+    background: rgba(0,0,0,.03);
+    border-radius: 5px;
+    margin: 0.5em 4em 0.5em 4em;
+    
+}
+
+
+#messagebox .left-msg .card-title{
+    color: #1bb9b7;
+    direction: ltr;    
+    margin-top: 1em;
+    
+}
+
+#messagebox .left-msg .card-title img{
+    
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    float: left;
+    margin: 0 0.5em 0 0.5em;
+    direction: ltr;
+}
+
+#messagebox .left-msg .msg{
+    
+    padding: 1em 1em 0em 1em;
+    border-radius: 5px;
+    margin: 0.5em 4em 0.5em 4em;
+    border: 1px solid #1bb9b7;
+    
+}
+
+.left-msg, .right-msg{
+    
+    padding: 0;
+    direction: rtl;
+    
+}
+/*
+textarea{
+    resize: none;
+    direction: rtl;
+    margin = 0;
+}
+*/
+.modal-footer textarea{
+    resize: none;
+    direction: rtl;
+    margin = 0;
+}
+
+
+#modal-msg .msg-date{
+    text-align: center;
+    font-size: 0.8em;
+    padding: .5em 0 .5em 0;
+    margin: 0 5em 0 5em;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+#modal-msg .timelabel{
+    float: left;
+    margin-top: 1em;
+}
+
+.modal-footer form{
+    margin: 0;
+    direction: ltr;
+    width: 100%;
+}
+/*
+.my_requests .form-control{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    
+}
+*/
+/*
+.btn-primary{
+    
+    border-top-left-radius: 0;
+}
+*/
+
+
+
+
+/*----------------------------------------------*/
+
+
+
+#modal-msg{
+    padding: 0;
+}
+
+
+#modal-msg .right-msg .card-title{
+    color: #1bb9b7; 
+    margin-top: 1em;
+}
+
+.right-msg .card-title img{
+    
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    float: right;
+    margin-left: 0.5em;
+    
+}
+
+#modal-msg .right-msg .msg{
+    
+    padding: 1em 1em 0em 1em;
+    background: rgba(0,0,0,.03);
+    border-radius: 5px;
+    margin: 0.5em 4em 0.5em 4em;
+    text-align: right;
+    
+}
+
+
+#modal-msg .left-msg .card-title{
+    color: #1bb9b7;
+    direction: ltr;    
+    margin-top: 1em;
+    
+}
+
+#modal-msg .left-msg .card-title img{
+    
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    float: left;
+    margin: 0 0.5em 0 0.5em;
+    direction: ltr;
+}
+
+#modal-msg .left-msg .msg{
+    
+    padding: 1em 1em 0em 1em;
+    border-radius: 5px;
+    margin: 0.5em 4em 0.5em 4em;
+    border: 1px solid #1bb9b7;
+    text-align: right;
+}
+
+#modal-msg .card-text{
+    margin: 0;
+}
