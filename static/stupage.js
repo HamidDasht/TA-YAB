@@ -51,6 +51,7 @@ $('.fa-bookmark').click(function(){
 
 $(function()
 {
+    
     /*
          
         // for bootstrap 3 use 'shown.bs.tab', for bootstrap 2 use 'shown' in the next line
@@ -76,7 +77,7 @@ $(function()
 
         $(window).load();
         //$("#pills-tabContent").removeStyle('display');
-      */
+    */
            
             
 });
@@ -85,7 +86,7 @@ $('#pills-tab').children('.nav-item').children('.nav-link').click(function(){
     
     $('#pills-tab').children('.nav-item').children('.nav-link').css("background-color", "white");
     $('#pills-tab').children('.nav-item').children('.nav-link').css("border-bottom-color", "white");
-//    $(this).css("background-color", "#eee");
+//  $(this).css("background-color", "#eee");
     $(this).css("border-bottom-color", "#1bb9b7");
     $(this).css("color", "black");
   
@@ -121,6 +122,12 @@ window.onload = WindowResize;
 window.onresize = WindowResize;
 function WindowResize(){
 
+    $('#pills-tab').children('.nav-item').children('.nav-link').css("background-color", "white");
+    $('#pills-tab').children('.nav-item').children('.nav-link').css("border-bottom-color", "white");
+
+    $('#pills-tab').children('.nav-item').children('.active').css("border-bottom-color", "#1bb9b7");
+    $('#pills-tab').children('.nav-item').children('.active').css("color", "balck");
+    
     if(window.innerWidth > 1200){
         
         $('.alert').children('p').css('width', String( window.innerWidth - $('.leftside')[0].offsetWidth - $('.profile')[0].offsetWidth - 300) + 'px');

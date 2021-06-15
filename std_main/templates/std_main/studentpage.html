@@ -307,16 +307,16 @@
         <div class="my_requests">
           <div class="card border-white">
             <div class="card-header bg-white" style="padding-bottom: 0; box-shadow: 0px 7px 7px -5px #ddd">
-              {% if request_aria_selected %}
+              <!--{% if request_aria_selected %}
               <h5 class="mb-sm-1 mb-md-0"> درخواست ها </h5>
               {% elif reply_aria_selected %}
               <h5 class="mb-sm-1 mb-md-0"> پاسخ ها </h5>
-              {% endif %}
+              {% endif %}-->
               <ul class="nav nav-pills" id="pills-tab" role="tablist" dir="ltr" style="">
                 <li class="nav-item" role="presentation">
                   <!-- Requests TAB HERE -->
                   <a class="nav-link {% if request_aria_selected %} active {% endif %} " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                    aria-controls="pills-home" aria-selected="true"><span class="badge badge-pill badge-danger">2</span>
+                    aria-controls="pills-home" aria-selected="true"><span class="badge badge-pill badge-danger"></span>
                     همه درخواست ها </a>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -402,8 +402,8 @@
                                   <div class="icons">
                                     <i class="fas fa-share-alt btn border-secondary text-secondary"
                                       data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
-                                    <i class="far fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip"
-                                      data-placement="top" title="ذخیره درخواست"></i>
+                                    <i class="far fa-bookmark btn border-secondary text-secondary bookmark-request" data-toggle="tooltip"
+                                      data-placement="top" title="ذخیره درخواست" value="{{ request.id }}"></i>
                                   </div>
                                 </div>
 
@@ -638,10 +638,10 @@
                                   </div>
                                   <p class="card-text"><small class="text-muted"> {{ reply.datetime }} </small>
                                     {% if reply.is_accepted %}
-                                    <small class="text-muted">  بررسی شده <i class="far fa-eye"></i> </small>
+                                    <!--<small class="text-muted">  بررسی شده <i class="far fa-eye"></i> </small>-->
                                     <span class="badge badge-success state"> پذیرفته شده </span>
                                     {% elif reply.is_rejected %}
-                                    <small class="text-muted">  بررسی شده <i class="far fa-eye"></i> </small>
+                                    <!--<small class="text-muted">  بررسی شده <i class="far fa-eye"></i> </small>-->
                                     <span class="badge badge-danger state"> رد شده </span>
                                     {% else %}
                                     <small class="text-muted"> بررسی نشده <i class="far fa-eye-slash"></i> </small>

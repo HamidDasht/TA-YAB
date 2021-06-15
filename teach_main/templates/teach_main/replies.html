@@ -195,7 +195,7 @@
                       </li>
 -->
                       <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><span class="badge badge-pill badge-danger">2</span> همه پاسخ ها  </a>
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><span class="badge badge-pill badge-danger"></span> همه پاسخ ها  </a>
                       </li>
                       <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">ذخیره شده</a>
@@ -286,7 +286,7 @@
                                   <div class="card-body">
                                     <div class="icons">
                                         <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
-                                        <i class="far fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="ذخیره درخواست"></i>
+                                        <i class="far fa-bookmark btn border-secondary text-secondary bookmark-reply" data-toggle="tooltip" data-placement="top" title="ذخیره پاسخ" value="{{ reply.id }}"></i>
                                     </div>  
                                     <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> {{ reply.replier_fname }} {{ reply.replier_lname }} </h5>
                                     <p class="card-text"> {{ reply.reply_text }} </p><hr>
@@ -319,7 +319,7 @@
                     <nav id="page-counter" class="bg-light">
                       <ul class="pagination">  
                         <li class="page-item" style="white-space: nowrap;">
-                          <a class="btn btn-warning" href="../"> بازگشت<i class="fas fa-user-edit"></i> </a>
+                          <a class="btn btn-warning" href="../"> بازگشت</a>
                         </li>
                         <li class="page-item" style=" white-space: nowrap;">
                           {% if replies.has_previous %}
