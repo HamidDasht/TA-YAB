@@ -2,6 +2,7 @@ from django.db.models.query import QuerySet
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, request
 from teach_main.models import Request,Reply,Timing
+from .models import StoredRequests
 from django.views.generic import View
 from django.core.paginator import Paginator, EmptyPage
 from django.http import JsonResponse
@@ -144,3 +145,16 @@ def send_reply(request):
         else:
             return ' '
         
+def bookmark_request(http_request):
+    if http_request.method == "POST":
+        request_id = http_request.POST.get('id', False)
+        print(request_id)
+        ta_request = Request.objects.filter(id=request_id)[0]
+        print(ta_request)
+        if StoredRequests.objects.filter(owner=http_request.user, request=ta_request).exists():
+            print("Already bookmarked!")
+        else:
+            print("New bookmark request")
+            new_bookmark_neq = StoredRequests(owner=http_request.user,request=ta_request)
+            new_bookmark_neq.save()
+        return JsonResponse({})

@@ -286,7 +286,7 @@
                                   <div class="card-body">
                                     <div class="icons">
                                         <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
-                                        <i class="far fa-bookmark btn border-secondary text-secondary bookmark-reply" data-toggle="tooltip" data-placement="top" title="ذخیره پاسخ" value="{{ reply.id }}"></i>
+                                        <i class="far fa-bookmark btn border-secondary text-secondary bookmark-reply" data-toggle="tooltip" data-placement="top" title="ذخیره پاسخ" value="{{ reply.id }}"></i>{% csrf_token %}
                                     </div>  
                                     <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> {{ reply.replier_fname }} {{ reply.replier_lname }} </h5>
                                     <p class="card-text"> {{ reply.reply_text }} </p><hr>

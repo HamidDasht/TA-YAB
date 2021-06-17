@@ -403,7 +403,7 @@
                                     <i class="fas fa-share-alt btn border-secondary text-secondary"
                                       data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
                                     <i class="far fa-bookmark btn border-secondary text-secondary bookmark-request" data-toggle="tooltip"
-                                      data-placement="top" title="ذخیره درخواست" value="{{ request.id }}"></i>
+                                      data-placement="top" title="ذخیره درخواست" value="{{ request.id }}"></i>{% csrf_token %}
                                   </div>
                                 </div>
 

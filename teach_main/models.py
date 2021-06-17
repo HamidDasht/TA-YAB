@@ -41,3 +41,7 @@ class Reply(models.Model):
 class StoredReplies(models.Model):
     owner = models.ForeignKey(User, on_delete=CASCADE)
     reply = models.ForeignKey(Reply, on_delete=CASCADE)
+    datetime_of_bookmark = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def __str__(self):
+        return self.owner.first_name + " " + self.owner.last_name + " " + self.reply.reply_text 

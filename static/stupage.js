@@ -147,6 +147,17 @@ function WindowResize(){
 }
 
 
+$('.bookmark-request').click(function() {
+    $.ajax(
+    {
+        url : 'bookmark_request',
+        type : 'POST',
+        dataType: 'json',
+        data: {csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),id : $(this).attr('value')},
+        success: function(json_resp){
+        }   
+    });
+});
 
 $('.send_rep').click(function() {
   $.ajax(  

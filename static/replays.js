@@ -53,6 +53,17 @@ $('.accept_button').click(function() {
     });
   });
 
+  $('.bookmark-reply').click(function() {
+    $.ajax(
+    {
+        url : 'bookmark_reply',
+        type : 'POST',
+        dataType: 'json',
+        data: {csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),id : $(this).attr('value')},
+        success: function(json_resp){
+        }   
+    });
+});
   
 $('.reject_button').click(function() {
     $.ajax(  

@@ -2,7 +2,7 @@ from django.http.response import JsonResponse
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage
-from .models import Request, Timing, Reply
+from .models import Request, StoredReplies, Timing, Reply
 from django.http import HttpResponseRedirect
 from register.models import TEACHER, UserProfile
 from django.contrib.auth.decorators import login_required
@@ -167,3 +167,17 @@ def reject_reply(request):
             related_reply.is_rejected = True
             related_reply.save(update_fields=['is_rejected'])
             return JsonResponse({'status':'success', 'reply_id':reply_id})
+
+def bookmark_reply(http_request):
+    if http_request.method == "POST":
+        reply_id = http_request.POST.get('id', False)
+        print(reply_id)
+        student_reply = Reply.objects.filter(id=reply_id)[0]
+        print(student_reply)
+        if StoredReplies.objects.filter(owner=http_request.user, reply=student_reply).exists():
+            print("Already bookmarked!")
+        else:
+            print("New bookmark reply")
+            new_bookmark_rep = StoredReplies(owner=http_request.user, reply=student_reply)
+            new_bookmark_rep.save()
+        return JsonResponse({})
