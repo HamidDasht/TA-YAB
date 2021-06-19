@@ -69,6 +69,9 @@ class UserProfile(models.Model):
         default=STUDENT,
     )
 
+    def __str__(self):
+        return f"{self.user} {self.year_in_school} {self.DEPT_CHOICES[int(self.department)-1]} {self.TYPE_CHOICES[int(self.type)-1]}"
+
 
 """
 class MyAccountManager(UserManager):
