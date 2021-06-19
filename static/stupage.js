@@ -147,13 +147,28 @@ function WindowResize(){
 }
 
 $('.bookmark-request').click(function() {
+    let clicked_element = $(this);
+    let action;
+    if (clicked_element.hasClass('in-bookmark-aria'))
+        action = 'delete';
+    else
+        action = 'add';
     $.ajax(
     {
         url : 'bookmark_request',
         type : 'POST',
         dataType: 'json',
-        data: {csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),id : $(this).attr('value')},
+        data: {csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+        id : $(this).attr('value'),
+        action: action},
         success: function(json_resp){
+            if (json_resp.status == "removed")
+            {
+                if (clicked_element.hasClass("in-bookmark-aria"))
+                {
+                    clicked_element.closest("tr").remove();
+                }
+            }
         }   
     });
 });

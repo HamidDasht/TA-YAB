@@ -190,16 +190,24 @@ def reject_reply(request):
 def bookmark_reply(http_request):
     if http_request.method == "POST":
         reply_id = http_request.POST.get('id', False)
+        # Action can be either 'add' or 'delete'
+        action = http_request.POST.get('action', 'add')
         print(reply_id)
         student_reply = Reply.objects.filter(id=reply_id)[0]
         print(student_reply)
         if StoredReplies.objects.filter(owner=http_request.user, reply=student_reply).exists():
-            print("Already bookmarked!")
+            if action == "delete":
+                print("Already bookmarked! Removing")
+                StoredReplies.objects.filter(owner=http_request.user, reply=student_reply).delete()
+                return JsonResponse({'status':'removed'})
+            else:
+                print("Already bookmarked!")
+                return JsonResponse({'status': 'noaction'})
         else:
             print("New bookmark reply")
             new_bookmark_rep = StoredReplies(owner=http_request.user, reply=student_reply)
             new_bookmark_rep.save()
-        return JsonResponse({})
+            return JsonResponse({'status': 'added'})
 
 def delete_request(http_request):
     if http_request.method == "POST":

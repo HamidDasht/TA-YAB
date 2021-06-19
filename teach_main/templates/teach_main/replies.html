@@ -373,7 +373,8 @@
                                   <div class="card-body">
                                     <div class="icons">
                                         <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
-                                        <i class="fas fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="ذخیره درخواست"></i>
+                                        <i class="fas fa-bookmark btn border-secondary text-secondary bookmark-reply in-bookmark-aria"
+                                         data-toggle="tooltip" data-placement="top" title="ذخیره درخواست" value="{{ bookmark.reply.id }}"></i>{% csrf_token %}
                                     </div>                                       
                                     <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="...">{{ bookmark.reply.replier_fname }} {{ bookmark.reply.replier_lname }} </h5>
                                     <p class="card-text"> {{ bookmark.reply.reply_text }} </p>

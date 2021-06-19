@@ -69,13 +69,29 @@ $('.accept_button').click(function() {
 
   
   $('.bookmark-reply').click(function() {
+    let clicked_element = $(this);
+    let action;
+    if (clicked_element.hasClass('in-bookmark-aria'))
+        action = 'delete';
+    else
+        action = 'add';
     $.ajax(
     {
         url : 'bookmark_reply',
         type : 'POST',
         dataType: 'json',
-        data: {csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),id : $(this).attr('value')},
-        success: function(json_resp){
+        data: {csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+        id : $(this).attr('value'),
+        action: action},
+        success: function(json_resp)
+        {
+          if (json_resp.status == "removed")
+          {
+              if (clicked_element.hasClass("in-bookmark-aria"))
+              {
+                  clicked_element.closest("tbody").remove();
+              }
+          }
         }   
     });
 });

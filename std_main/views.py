@@ -165,13 +165,21 @@ def send_reply(request):
 def bookmark_request(http_request):
     if http_request.method == "POST":
         request_id = http_request.POST.get('id', False)
+        # Action can be either 'add' or 'delete'
+        action = http_request.POST.get('action', 'add')
         print(request_id)
         ta_request = Request.objects.filter(id=request_id)[0]
         print(ta_request)
         if StoredRequests.objects.filter(owner=http_request.user, request=ta_request).exists():
-            print("Already bookmarked!")
+            if action == "delete":
+                print("Already bookmarked! Removing")
+                StoredRequests.objects.filter(owner=http_request.user, request=ta_request).delete()
+                return JsonResponse({'status':'removed'})
+            else:
+                print("Already bookmarked!")
+                return JsonResponse({'status': 'noaction'}) 
         else:
             print("New bookmark request")
             new_bookmark_neq = StoredRequests(owner=http_request.user,request=ta_request)
             new_bookmark_neq.save()
-        return JsonResponse({})
+            return JsonResponse({'status': 'added'})
