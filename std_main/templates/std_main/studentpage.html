@@ -322,10 +322,11 @@
                 <li class="nav-item" role="presentation">
                   <!-- Replies TAB HERE-->
                   <a class="nav-link {% if reply_aria_selected %} active {% endif %}" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"> پاسخ ها </a>
-                </li><!--
+                </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">ذخیره شده</a>
-                </li>-->
+                  <!--<a class="nav-link {% if bookmark_aria_selected %} active {% endif %}" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">ذخیره شده</a>-->
+                  <a class="nav-link {% if bookmark_aria_selected %} active {% endif %}" id="pills-contact-tab"  href="{% url 'index' %}?bookpage=1"  aria-selected="false">ذخیره شده</a>
+                </li>
               </ul>
             </div>
             <div class="modal fade" id="SendReplayCard" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -376,11 +377,8 @@
                 <!--                    <div class="card-body" style="padding-left: 0; padding-right: 0;">-->
                 <div class="card-body" style="padding: 1em 0 1em 0;">
                   <div id="Requests">
-
-
                     <div class="card" id="no-request" style="display: none;">
                       <h5>هیچ درخواستی موجود نمی باشد.</h5>
-
                     </div>
                     <div class="card">
                       {% if success %}
@@ -390,7 +388,6 @@
                       <table class="table">
                         {% for request in requests %}
                         <tbody>
-
                           <tr>
                             <td scope="row" style="border-top: none;">
                               <div class="card border-white" style="max-width: 900px;">
@@ -406,7 +403,6 @@
                                       data-placement="top" title="ذخیره درخواست" value="{{ request.id }}"></i>{% csrf_token %}
                                   </div>
                                 </div>
-
                                 <div class="card-body">
                                   <a href="#">
                                     <h5 class="card-title"> {{ request.course_name }} </h5>
@@ -468,12 +464,13 @@
                   </div>
                 </div>
               </div>
-
-              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+              <!-- Bookmarks TAB HERE -->
+              <div class="tab-pane fade {% if bookmark_aria_selected %} show active {% endif %}" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <div class="card-body" style="padding: 1em 0 1em 0;">
                   <div id="Requests">
                     <div class="card">
                       <table class="table">
+                      {% for bookmark in bookmarks %}                     
                         <tbody>
                           <tr>
                             <td scope="row" style="border-top: none;">
@@ -481,114 +478,61 @@
                                 <div class="card-header border-info form-check-inline">
                                   <div class="teacher-name">
                                     <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="...">
-                                      استاد الهام محمودزاده </p>
+                                      استاد {{ bookmark.request.prof_fname }} {{ bookmark.request.prof_lname }} </p>
                                   </div>
                                   <div class="icons">
                                     <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
                                     <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
                                   </div>
                                 </div>
-
                                 <div class="card-body">
                                   <a href="#">
-                                    <h5 class="card-title"> مبانی رایانش امن </h5>
+                                    <h5 class="card-title"> {{ bookmark.request.course_name }} </h5>
                                   </a>
-                                  <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می
-                                    توانند جهت همکاری پیام دهند. </p>
-                                  <h5><span class="badge badge-danger">دانشجو ارشد</span></h5>
+                                  <p class="card-text p-text"> {{ bookmark.request.description }} </p>
+                                  {% if bookmark.request.masters %}
+                                  <h5><span class="badge badge-danger">دانشجوی تحصیلات تکمیلی</span></h5>
+                                  {% endif %}
+                                  {% if bookmark.request.bachelor %}
+                                  <h5><span class="badge badge-warning">دانشجوی کارشناسی</span></h5>
+                                  {% endif %}
                                   <hr>
-                                  <p class="card-text"><small class="text-muted"> 3 روز پیش </small>
-                                    <a class="btn btn-success btn-md" href="#" role="button" data-toggle="modal"
-                                      data-target="#SendReplayCard" data-whatever=""><i class="fas fa-reply"></i> ارسال
-                                      پاسخ </a>
+                                  <p class="card-text"><small class="text-muted"> {{ bookmark.request.datetime }} </small>
+                                    <a class="btn btn-success btn-md send_rep" href="#" role="button" data-toggle="modal"
+                                      data-target="#SendReplayCard" data-whatever="" value="{{ bookmark.request.id }}">
+                                      <i class="fas fa-reply"></i> ارسال پاسخ </a>
                                 </div>
                               </div>
-
                             </td>
-
-                          </tr>
-                          <tr>
-                            <td scope="row">
-                              <div class="card border-white" style="max-width: 900px;">
-                                <div class="card-header border-info form-check-inline">
-                                  <div class="teacher-name">
-                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="...">
-                                      استاد الهام محمودزاده </p>
-                                  </div>
-                                  <div class="icons">
-                                    <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
-                                    <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
-                                  </div>
-                                </div>
-                                <div class="card-body">
-                                  <a href="#">
-                                    <h5 class="card-title"> مبانی رایانش امن </h5>
-                                  </a>
-                                  <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می
-                                    توانند جهت همکاری پیام دهند. </p>
-                                  <h5><span class="badge badge-warning">دانشجو کارشناسی</span></h5>
-                                  <p class="card-text"><small class="text-muted"> 3 روز پیش </small>
-                                    <a class="btn btn-success btn-md" href="#" role="button" data-toggle="modal"
-                                      data-target="#SendReplayCard" data-whatever=""><i class="fas fa-reply"></i> ارسال
-                                      پاسخ </a>
-                                </div>
-                              </div>
-
-                            </td>
-
-                          </tr>
-                          <tr>
-                            <td scope="row">
-                              <div class="card border-white" style="max-width: 900px;">
-                                <div class="card-header border-info form-check-inline">
-                                  <div class="teacher-name">
-                                    <p class=" form-check-inline"> <img src="{% static 'profpic copy.png' %}" alt="...">
-                                      استاد الهام محمودزاده </p>
-                                  </div>
-                                  <div class="icons">
-                                    <i class="fas fa-share-alt btn border-secondary text-secondary"></i>
-                                    <i class="fas fa-bookmark btn border-secondary text-secondary"></i>
-                                  </div>
-                                </div>
-                                <div class="card-body">
-                                  <a href="#">
-                                    <h5 class="card-title"> مبانی رایانش امن </h5>
-                                  </a>
-                                  <p class="card-text p-text"> دانشجویانی که این درس را در ترم های پیش گذرانده اند می
-                                    توانند جهت همکاری پیام دهند. </p>
-                                  <h5><span class="badge badge-danger">دانشجو ارشد</span><span
-                                      class="badge badge-warning">دانشجو کارشناسی</span></h5>
-                                  <p class="card-text"><small class="text-muted"> 3 روز پیش </small>
-                                    <a class="btn btn-success btn-md" href="#" role="button" data-toggle="modal"
-                                      data-target="#SendReplayCard" data-whatever=""><i class="fas fa-reply"></i> ارسال
-                                      پاسخ </a>
-                                </div>
-                              </div>
-
-                            </td>
-
                           </tr>
                         </tbody>
+                        {% empty %}
+                        <div class="card text-white bg-dark " >
+                          <div class="card-body">
+                            <p class="card-text">هیچ درخواست ذخیره شده ای وجود ندارد</p>
+                          </div>
+                        </div>
+                      {% endfor %}
                       </table>
                       <div class="card-footer">
                         <nav id="page-counter" class="bg-light">
                           <ul class="pagination">
                             <li class="page-item" style=" white-space: nowrap;">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              {% if bookmarks.has_previous %}
+                              <a class="page-link page-button" href="{% url 'index' %}?bookpage={{bookmarks.previous_page_number}}"
+                                aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                                 قبلی
                               </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                              {% endif %}
+                            </li>                            
                             <li class="page-item" style=" white-space: nowrap;">
-                              <a class="page-link" href="#" aria-label="Next">بعدی
-                                <span aria-hidden="true">&raquo;</span>
+                              {% if bookmarks.has_next %}
+                              <a class="page-link page-button" href="{% url 'index' %}?bookpage={{bookmarks.next_page_number}}"
+                              aria-label="Next">بعدی
+                              <span aria-hidden="true">&raquo;</span>
                               </a>
+                              {% endif %}
                             </li>
                           </ul>
                         </nav>

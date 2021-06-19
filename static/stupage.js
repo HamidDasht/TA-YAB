@@ -146,7 +146,6 @@ function WindowResize(){
 
 }
 
-
 $('.bookmark-request').click(function() {
     $.ajax(
     {

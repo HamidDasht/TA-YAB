@@ -37,12 +37,19 @@ def index(request):
     if 'reqpage' in request.GET:
         reply_aria_selected = False
         request_aria_selected = True
+        bookmark_aria_selected = False
     elif 'reppage' in request.GET:
         reply_aria_selected = True
         request_aria_selected = False
+        bookmark_aria_selected = False
+    elif 'bookpage' in request.GET:
+        request_aria_selected = False
+        reply_aria_selected = False
+        bookmark_aria_selected = True
     else:
         request_aria_selected = True
         reply_aria_selected = False
+        bookmark_aria_selected = False
 
 
     # Get replies for replies page
@@ -61,12 +68,21 @@ def index(request):
     except EmptyPage:
         page_reply = p_reply.page(1)
 
+    bookmarks = StoredRequests.objects.filter(owner=user).order_by('-datetime_of_bookmark')
+    p_bookmark = Paginator(bookmarks, 3)
+    page_num = request.GET.get('bookpage', 1)
+    try:
+        page_bookmark = p_bookmark.page(page_num)
+    except:
+        page_bookmark = p_bookmark.page(1)
+
     if request.method == 'GET':
         return render(
             request, 'std_main/studentpage.html', 
         {'requests':page_request , 'std_name': user.first_name + ' ' + user.last_name, 
         'email': user.email, 'replies':page_reply, 'reply_aria_selected':reply_aria_selected
-        ,'request_aria_selected':request_aria_selected}
+        ,'request_aria_selected':request_aria_selected, 'bookmark_aria_selected':bookmark_aria_selected
+        , 'bookmarks':page_bookmark}
         )
 
     elif request.method == 'POST':
@@ -99,7 +115,8 @@ def index(request):
         pass
     return render(request, 'std_main/studentpage.html', {'requests':page_request, 'replies': page_reply
     ,'success': True, 'email':user.email, 'std_name': user.first_name + ' ' + user.last_name
-    ,'reply_aria_selected':reply_aria_selected,'request_aria_selected':request_aria_selected})
+    ,'reply_aria_selected':reply_aria_selected,'request_aria_selected':request_aria_selected
+    ,'bookmark_aia_selected': bookmark_aria_selected, 'bookmarks':page_bookmark})
 
 
 @login_required(login_url='../home')

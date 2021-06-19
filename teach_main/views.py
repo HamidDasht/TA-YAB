@@ -136,19 +136,38 @@ def replies(request):
         if ta_request.owner != request.user:
             return redirect('../prof')
         
+        if 'reppage' in request.GET:
+            reply_aria_selected = True
+            bookmark_aria_selected = False
+        elif 'bookpage' in request.GET:
+            reply_aria_selected = False
+            bookmark_aria_selected = True
+        else:
+            reply_aria_selected = True
+            bookmark_aria_selected = False
+
         # Retrieve all replies to the specified request
         replies = Reply.objects.filter(request=ta_request).order_by('datetime')
+        # Retreive all bookmarked replies to the specified request
+        bookmarks = StoredReplies.objects.filter(owner=user,reply__request__id=cid).order_by('-datetime_of_bookmark')
 
         p = Paginator(replies, 3)
-        page_num = request.GET.get('page', 1)
+        page_num = request.GET.get('reppage', 1)
         try:
-            page = p.page(page_num)
+            reply_page = p.page(page_num)
         except EmptyPage:
-            page = p.page(1)
+            reply_page = p.page(1)
+
+        p = Paginator(bookmarks, 3)
+        page_num = request.GET.get('bookpage',1)
+        try:
+            bookmark_page = p.page(page_num)
+        except:
+            bookmark_page = p.page(1)
 
         return render(request, 'teach_main/replies.html',{ 
-        'request':ta_request, 'replies':page, 'teacher_name': user.first_name + ' ' + user.last_name,
-        'email': user.email})
+        'request':ta_request, 'replies':reply_page, 'bookmarks':bookmark_page, 'teacher_name': user.first_name + ' ' + user.last_name,
+        'email': user.email, 'bookmark_aria_selected':bookmark_aria_selected, 'reply_aria_selected':reply_aria_selected})
 
 def accept_reply(request):
     if request.method == 'GET':

@@ -189,16 +189,12 @@
                 <div class="card-header bg-white" style="padding-bottom: 0; box-shadow: 0px 7px 7px -5px #ddd">
                     <h5 class="mb-sm-1 mb-md-0"> درخواست جستجوی دستیار آموزشی </h5>              
                     <ul class="nav nav-pills" id="pills-tab" role="tablist"  dir="ltr" style="">
-<!--
                       <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><span class="badge badge-pill badge-danger">2</span> همه درخواست ها </a>
+                        <a class="nav-link {% if reply_aria_selected %} active {% endif %}" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><span class="badge badge-pill badge-danger"></span> همه پاسخ ها  </a>
                       </li>
--->
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><span class="badge badge-pill badge-danger"></span> همه پاسخ ها  </a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">ذخیره شده</a>
+                      <li class="nav-item" role="presentation">                       
+                        <a class="nav-link {% if bookmark_aria_selected %} active {% endif %}" id="pills-contact-tab" href="replies?cid={{ request.id }}&bookpage=1" aria-selected="false">ذخیره شده</a>
+                        <!--<a class="nav-link {% if bookmark_aria_selected %} active {% endif %}" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">ذخیره شده</a>-->
                       </li>
                     </ul>
                 </div>
@@ -265,7 +261,7 @@
    
 <!--                <div class="tab-content">-->
                 <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">    
+                <div class="tab-pane fade {% if reply_aria_selected %} show active {% endif %}" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">    
 <!--                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">-->
 <!--                    <div class="card-body" style="padding-left: 0; padding-right: 0;">-->
 <!--
@@ -323,7 +319,7 @@
                         </li>
                         <li class="page-item" style=" white-space: nowrap;">
                           {% if replies.has_previous %}
-                          <a class="page-link" href="replies?cid={{ request.id }}&page={{replies.previous_page_number}}" 
+                          <a class="page-link" href="replies?cid={{ request.id }}&reppage={{replies.previous_page_number}}" 
                           aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                               قبلی
@@ -340,7 +336,7 @@
                         -->
                         <li class="page-item" style=" white-space: nowrap;">
                           {% if replies.has_next %}
-                          <a class="page-link" href="replies?cid={{ request.id }}&page={{replies.next_page_number}}" 
+                          <a class="page-link" href="replies?cid={{ request.id }}&reppage={{replies.next_page_number}}" 
                           aria-label="Next">بعدی
                             <span aria-hidden="true">&raquo;</span>
                           </a>
@@ -355,7 +351,7 @@
                 </div>                                        
                 </div>
                 
-                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">   
+                <div class="tab-pane fade {% if bookmark_aria_selected %} show active {% endif %}" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">   
 <!--                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">-->
 <!--                    <div class="card-body" style="padding-left: 0; padding-right: 0;">-->
 <!--
@@ -368,6 +364,7 @@
                   <div id="Replayscard">
                      <div class="card">
                       <table class="table">
+                      {% for bookmark in bookmarks %}
                       <tbody>
                         <tr>
                           <td scope="row" style="border-top: none;"> 
@@ -378,85 +375,55 @@
                                         <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
                                         <i class="fas fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="ذخیره درخواست"></i>
                                     </div>                                       
-                                    <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="...">سارا برادران قهفرخی سمنتینست شتنس</h5>
-                                    <p class="card-text"> با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت صلاحدید شما مایل به همکاری به عنوان دستیار آموزشی در این درس هستم. </p>
-                                    <p class="card-text"><small class="text-muted">  3 روز پیش </small>
-                                    <a class="btn btn-success btn-md" href="#" role="button"> پذیرش <i class="far fa-handshake"></i></a>
-                                    <a class="btn btn-danger btn-md" href="#" role="button"> رد پاسخ <i class="fas fa-handshake-slash"></i></a>
+                                    <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="...">{{ bookmark.reply.replier_fname }} {{ bookmark.reply.replier_lname }} </h5>
+                                    <p class="card-text"> {{ bookmark.reply.reply_text }} </p>
+                                    <p class="card-text"><small class="text-muted"> {{ bookmark.reply.datetime }} </small>
+                                    <!-- Show Accept/Reject Button/Status based on reply's state -->
+                                    {% if bookmark.reply.is_accepted %}
+                                    <a class="btn btn-success btn-md" disabled role="button"> پذیرفته شده <i class="far fa-handshake"></i></a>
+                                    {% elif bookmark.reply.is_rejected %}
+                                    <a class="btn btn-danger btn-md" disabled role="button"> رد شده <i class="fas fa-handshake-slash"></i></a>
+                                    {% else %}
+                                    <a class="btn btn-success btn-md accept_button" value="{{ bookmark.reply.id }}" id="bk-accept{{ bookmark.reply.id }}"  role="button"> پذیرش <i class="far fa-handshake"></i></a>
+                                    <a class="btn btn-danger btn-md reject_button" value="{{ bookmark.reply.id }}" id="bk-reject{{ bookmark.reply.id }}"  role="button"> رد پاسخ <i class="fas fa-handshake-slash"></i></a>
+                                    {% endif %}
                                     </p>
                                   </div>
                               </div>
                             </div>
-
                           </td>
-
-                        </tr>
-                        <tr>
-                          <td scope="row">
-                            <div class="card border-white" style="max-width: 900px;">
-                              <div class="row">
-                                  <div class="card-body">
-                                    <div class="icons">
-                                        <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
-                                        <i class="fas fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="ذخیره درخواست"></i>
-                                    </div>                                       
-                                    <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> پریسا ملاحسینی </h5>
-                                    <p class="card-text"> با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت صلاحدید شما مایل به همکاری به عنوان دستیار آموزشی در این درس هستم. </p>
-                                      
-                                    <p class="card-text"><small class="text-muted">  3 روز پیش </small>
-                                    <a class="btn btn-success btn-md" href="#" role="button"> پذیرش <i class="far fa-handshake"></i></a>
-                                    <a class="btn btn-danger btn-md" href="#" role="button"> رد پاسخ <i class="fas fa-handshake-slash"></i></a>
-                                    </p>
-                                  </div>
-                              </div>
-                            </div>
-
-                          </td>
-
-                        </tr>  
-                        <tr>
-                          <td scope="row">
-                            <div class="card border-white" style="max-width: 900px;">
-                              <div class="row">                                 
-                                  <div class="card-body">
-                                    <div class="icons">
-                                        <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
-                                        <i class="fas fa-bookmark btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="ذخیره درخواست"></i>
-                                    </div>                                       
-                                    <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> پریسا ملاحسینی </h5>
-                                    <p class="card-text"> با سلام بنده درس مبانی رایانش امن را 2 ترم پیش با نمره 20 گذرانده ام در صورت صلاحدید شما مایل به همکاری به عنوان دستیار آموزشی در این درس هستم. </p>
-                                    <p class="card-text"><small class="text-muted">  3 روز پیش </small>
-                                    <a class="btn btn-success btn-md" href="#" role="button"> پذیرش <i class="far fa-handshake"></i></a>
-                                    <a class="btn btn-danger btn-md" href="#" role="button"> رد پاسخ <i class="fas fa-handshake-slash"></i></a>
-                                    </p>
-                                  </div>
-                              </div>
-                            </div>
-
-                          </td>
-
                         </tr>
                       </tbody>
+                      {% empty %}
+                        <div class="card text-white bg-dark " >
+                          <div class="card-body">
+                            <p class="card-text">هیچ پاسخ ذخیره شده ای وجود ندارد</p>
+                          </div>
+                        </div>
+                      {% endfor %}
                     </table>
                     <div class="card-footer">
                     <nav id="page-counter" class="bg-light">
-                      <ul class="pagination">  
+                      <ul class="pagination">
+                        <li class="page-item" style="white-space: nowrap;">
+                          <a class="btn btn-warning" href="../"> بازگشت</a>
+                        </li>  
                         <li class="page-item" style=" white-space: nowrap;">
-                          <a class="page-link" href="#" aria-label="Previous">
+                          {% if bookmarks.has_previous %}
+                          <a class="page-link" href="replies?cid={{ request.id }}&bookpage={{bookmarks.previous_page_number}}" 
+                          aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                               قبلی
                           </a>
+                          {% endif %}
                         </li> 
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item"><a class="page-link" href="#">6</a></li>
                         <li class="page-item" style=" white-space: nowrap;">
-                          <a class="page-link" href="#" aria-label="Next">بعدی
+                          {% if bookmarks.has_next %}
+                          <a class="page-link" href="replies?cid={{ request.id }}&bookpage={{bookmarks.next_page_number}}" 
+                          aria-label="Next">بعدی
                             <span aria-hidden="true">&raquo;</span>
                           </a>
+                          {% endif %}
                         </li>
                       </ul>
                     </nav>

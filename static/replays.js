@@ -48,11 +48,26 @@ $('.accept_button').click(function() {
           $(accept_button).append(' <i class="far fa-handshake"></i>');
           $(reject_button).remove();
           $(accept_button).removeClass('accept_button');
+
+          // Update buttons in bookmarked aira if exists (if is bookmarked)
+          try {
+            let bk_accept_button = "#bk-accept" + json_resp.reply_id;
+            let bk_reject_button = "#bk-reject" + json_resp.reply_id;
+            $(bk_accept_button).attr('disabled','true');
+            $(bk_accept_button).text('پذیرفته شده');
+            $(bk_accept_button).append(' <i class="far fa-handshake"></i>');
+            $(bk_reject_button).remove();
+            $(bk_accept_button).removeClass('accept_button');
+          }
+          catch(err) {
+            
+          }
       }
       
     });
   });
 
+  
   $('.bookmark-reply').click(function() {
     $.ajax(
     {
@@ -85,6 +100,21 @@ $('.reject_button').click(function() {
           $(reject_button).append(' <i class="fas fa-handshake-slash"></i>');
           $(accept_button).remove();
           $(reject_button).removeClass('reject_button');
+
+          try{
+            let accept_button = "#bk-accept" + json_resp.reply_id;
+            let reject_button = "#bk-reject" + json_resp.reply_id;
+
+            $(reject_button).attr('disabled','true');
+            $(reject_button).text('رد شده');
+            $(reject_button).append(' <i class="fas fa-handshake-slash"></i>');
+            $(accept_button).remove();
+            $(reject_button).removeClass('reject_button');
+          }
+          catch(err)
+          {
+
+          }
       }
       
     });
@@ -125,3 +155,15 @@ $('#pills-tab').children('.nav-item').children('.nav-link').click(function(){
   
 
 });
+
+window.onload = WindowResize;
+
+window.onresize = WindowResize;
+function WindowResize(){
+
+    $('#pills-tab').children('.nav-item').children('.nav-link').css("background-color", "white");
+    $('#pills-tab').children('.nav-item').children('.nav-link').css("border-bottom-color", "white");
+
+    $('#pills-tab').children('.nav-item').children('.active').css("border-bottom-color", "#1bb9b7");
+    $('#pills-tab').children('.nav-item').children('.active').css("color", "balck");
+}
