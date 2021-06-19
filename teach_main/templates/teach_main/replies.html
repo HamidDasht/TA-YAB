@@ -223,7 +223,7 @@
                                     <hr>
                                     <p class="card-text"><small class="text-muted">  {{ request.datetime }} </small>
                                     <a class="btn btn-primary btn-md" href="#" role="button"> ویرایش <i class="fas fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-md" href="#" role="button"> حذف <i class="fas fa-trash-alt"></i></a>
+                                    <a class="btn btn-danger btn-md req-rmv-btn" value="{{ request.id }}" role="button"> حذف <i class="fas fa-trash-alt"></i></a>{% csrf_token %}
                                     </p>
                                   </div>
                                 </div>    

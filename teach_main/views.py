@@ -200,3 +200,20 @@ def bookmark_reply(http_request):
             new_bookmark_rep = StoredReplies(owner=http_request.user, reply=student_reply)
             new_bookmark_rep.save()
         return JsonResponse({})
+
+def delete_request(http_request):
+    if http_request.method == "POST":
+        request_id = http_request.POST.get('id', False)
+        print(request_id)
+        Request.objects.filter(id=request_id).delete()
+        return JsonResponse({})
+        return redirect('../home')
+        """student_reply = Reply.objects.filter(id=reply_id)[0]
+        print(student_reply)
+        if StoredReplies.objects.filter(owner=http_request.user, reply=student_reply).exists():
+            print("Already bookmarked!")
+        else:
+            print("New bookmark reply")
+            new_bookmark_rep = StoredReplies(owner=http_request.user, reply=student_reply)
+            new_bookmark_rep.save()
+        return JsonResponse({})"""

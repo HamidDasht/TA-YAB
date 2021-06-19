@@ -9,5 +9,6 @@ urlpatterns = [
     path('add_time', views.add_time, name='add_time'),
     path('accept_reply', views.accept_reply, name='accept_reply'),
     path('reject_reply', views.reject_reply, name='reject_reply'),
-    path('bookmark_reply', views.bookmark_reply, name='bookmark_reply')
+    path('bookmark_reply', views.bookmark_reply, name='bookmark_reply'),
+    path('delete_request', views.delete_request, name="delete_request"),
 ]

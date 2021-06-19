@@ -167,3 +167,21 @@ function WindowResize(){
     $('#pills-tab').children('.nav-item').children('.active').css("border-bottom-color", "#1bb9b7");
     $('#pills-tab').children('.nav-item').children('.active').css("color", "balck");
 }
+
+$('.req-rmv-btn').click(function() {
+  $.ajax(  
+    {
+    url : "delete_request",
+    type : 'POST',
+    dataType: 'json',
+    data: {
+        csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+          id : $(this).attr('value')
+      },
+    success: function(json_resp)
+    {
+      window.location.replace(location.pathname);
+    }
+    
+  });
+});
