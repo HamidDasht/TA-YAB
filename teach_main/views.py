@@ -55,8 +55,10 @@ def addreq(request):
     if profile.type != TEACHER:
         return HttpResponse("<h1>شما اجازه ی ورود به این صفحه را نداریم</h1>")
     
+    recent_requests = Request.objects.filter(owner=user).order_by('-datetime')[:2]
+
     if request.method == 'GET':
-        return render(request, 'teach_main/addreq.html', {'success': False})
+        return render(request, 'teach_main/addreq.html', {'success': False, 'recent_requests':recent_requests})
     elif request.method == 'POST':
         course_name = request.POST.get('CourseName',False)
         description = request.POST.get('validationTextarea',False)
@@ -85,7 +87,7 @@ def addreq(request):
     print(description)
     print(masters)
     print(bachelor)
-    return render(request, 'teach_main/addreq.html', {'success': 'True'})
+    return render(request, 'teach_main/addreq.html', {'success': 'True', 'recent_requests':recent_requests})
 
     #return HttpResponse(request.POST.get('CourseName',False))
 
@@ -151,6 +153,10 @@ def replies(request):
         # Retreive all bookmarked replies to the specified request
         bookmarks = StoredReplies.objects.filter(owner=user,reply__request__id=cid).order_by('-datetime_of_bookmark')
 
+        bookmarked_ids = []
+        for book in bookmarks:
+            bookmarked_ids.append(book.reply.id)
+
         p = Paginator(replies, 3)
         page_num = request.GET.get('reppage', 1)
         try:
@@ -167,7 +173,8 @@ def replies(request):
 
         return render(request, 'teach_main/replies.html',{ 
         'request':ta_request, 'replies':reply_page, 'bookmarks':bookmark_page, 'teacher_name': user.first_name + ' ' + user.last_name,
-        'email': user.email, 'bookmark_aria_selected':bookmark_aria_selected, 'reply_aria_selected':reply_aria_selected})
+        'email': user.email, 'bookmark_aria_selected':bookmark_aria_selected, 'reply_aria_selected':reply_aria_selected,
+        'bookmarked_ids':bookmarked_ids})
 
 def accept_reply(request):
     if request.method == 'GET':

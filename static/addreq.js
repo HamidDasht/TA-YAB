@@ -131,3 +131,24 @@ for(var i=0; i<6; i++){
         }
     }
 }
+
+
+$('.req-rmv').click(function() {
+    $(this).closest('.col-xl-12').remove();
+    
+    $.ajax(  
+      {
+      url : "delete_request",
+      type : 'POST',
+      dataType: 'json',
+      data: {
+          csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            id : $(this).attr('value')
+        },
+      success: function(json_resp)
+      {
+          
+      }
+      
+    });
+  });

@@ -69,7 +69,12 @@ def index(request):
         page_reply = p_reply.page(1)
 
     bookmarks = StoredRequests.objects.filter(owner=user).order_by('-datetime_of_bookmark')
+
+    bookmarked_ids = []
+    for book in bookmarks:
+        bookmarked_ids.append(book.request.id)
     p_bookmark = Paginator(bookmarks, 3)
+
     page_num = request.GET.get('bookpage', 1)
     try:
         page_bookmark = p_bookmark.page(page_num)
@@ -82,7 +87,7 @@ def index(request):
         {'requests':page_request , 'std_name': user.first_name + ' ' + user.last_name, 
         'email': user.email, 'replies':page_reply, 'reply_aria_selected':reply_aria_selected
         ,'request_aria_selected':request_aria_selected, 'bookmark_aria_selected':bookmark_aria_selected
-        , 'bookmarks':page_bookmark}
+        , 'bookmarks':page_bookmark, 'bookmarked_ids':bookmarked_ids}
         )
 
     elif request.method == 'POST':
@@ -116,7 +121,7 @@ def index(request):
     return render(request, 'std_main/studentpage.html', {'requests':page_request, 'replies': page_reply
     ,'success': True, 'email':user.email, 'std_name': user.first_name + ' ' + user.last_name
     ,'reply_aria_selected':reply_aria_selected,'request_aria_selected':request_aria_selected
-    ,'bookmark_aia_selected': bookmark_aria_selected, 'bookmarks':page_bookmark})
+    ,'bookmark_aia_selected': bookmark_aria_selected, 'bookmarks':page_bookmark, 'bookmarked_ids':bookmarked_ids})
 
 
 @login_required(login_url='../home')

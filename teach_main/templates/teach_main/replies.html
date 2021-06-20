@@ -282,7 +282,7 @@
                                   <div class="card-body">
                                     <div class="icons">
                                         <i class="fas fa-share-alt btn border-secondary text-secondary" data-toggle="tooltip" data-placement="top" title="اشتراک گذاری"></i>
-                                        <i class="far fa-bookmark btn border-secondary text-secondary bookmark-reply" data-toggle="tooltip" data-placement="top" title="ذخیره پاسخ" value="{{ reply.id }}"></i>{% csrf_token %}
+                                        <i class="{% if reply.id in bookmarked_ids %} fas {% else %} far {% endif %} fa-bookmark btn border-secondary text-secondary bookmark-reply" data-toggle="tooltip" data-placement="top" title="ذخیره پاسخ" value="{{ reply.id }}"></i>{% csrf_token %}
                                     </div>  
                                     <h5 class="card-title form-check-inline"> <img src="profpic%20copy.png" alt="..."> {{ reply.replier_fname }} {{ reply.replier_lname }} </h5>
                                     <p class="card-text"> {{ reply.reply_text }} </p><hr>
@@ -440,7 +440,7 @@
 
 
         <div class="col-md-4 col-lg-3 col-xl-3 pl-xl-4 pr-xl-5 pr-lg-3 pr-lg-3 bd-sidebar">
-            <div class="leftside">
+            <div class="leftside" style="visibility: visible;">
                     <div class="card card-body searchbox">
                             <form>
                                 <div class="col-md-12 col-lg-12 col-xl-12" style="direction: ltr">                                                     
